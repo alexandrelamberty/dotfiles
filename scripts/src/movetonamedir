@@ -1,0 +1,12 @@
+#!/bin/bash
+# For each markdown files in the target directory
+# it create a folder based on the name and move the 
+# file in it
+
+echo "Directory:" $1
+for i in "$1"*.md; do
+    [ -f "$i" ] || break
+    echo "$i"
+    mkdir --parent ${i%.*}
+    mv "$i" $_
+done

@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+#eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME gnome-session)/environ)";
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+#TODO: Move to ~/.locale./share/sounds
+sound="/usr/share/sounds/freedesktop/stereo/message-new-instant.oga"
+/usr/bin/notify-send "Audio change $1" "Don't forget to restart audio
+players"
+play $sound 
+if [ $1 -eq 0 ]
+then
+  /usr/bin/sed -i 's/1/0/g' ~/.asoundrc
+else
+  /usr/bin/sed -i 's/0/1/g' ~/.asoundrc
+fi

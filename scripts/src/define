@@ -1,0 +1,22 @@
+#!/bin/bash
+RED="\e[31m"
+ENDCOLOR="\e[0m"
+echo -e "`cat <<EOF
+${RED}Definition${ENDCOLOR} $1 [ noun, adjective hous; verb houz ]
+
+noun, plural hous·es  [hou-ziz].
+a building in which people live; residence for human beings.
+a household.
+(often initial capital letter) a family, including ancestors and descendants:
+the great houses of France; the House of Hapsburg.
+
+
+verb (used with object), housed  [houzd], hous·ing  [hou-zing].
+to put or receive into a house, dwelling, or living quarters:
+More than 200 students were housed in the dormitory.
+to give shelter to; harbor; lodge:
+to house flood victims in schools.
+
+verb (used without object), housed  [houzd], hous·ing  [hou-zing].
+to take shelter; dwell.
+EOF`"

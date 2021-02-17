@@ -1,0 +1,16 @@
+#!/bin/bash
+# Status Screen Recording
+# Show size and time of a video files
+
+# Retrieve last file by timestamp 
+dir=~/Videos
+unset -v latest
+for file in "$dir"/*; do
+	  [[ $file -nt $latest ]] && latest=$file
+done
+
+FILESIZE=$(stat -c%s "$latest")
+echo " $FILESIZE bytes."
+
+
+#echo [R] 02:00:00 - 3.7M

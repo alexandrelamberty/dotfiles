@@ -1,0 +1,5 @@
+#!/bin/bash
+# Rename all the markdown file of the current directory
+# to README.md
+find ./ -type f -name "*.md" -execdir mv {} "README.md" \;
+

@@ -1,0 +1,4 @@
+#!/bin/sh
+# Launch the lynx browser and search with bing the passed argument
+lynx "www.bing.com/search?q=$*"
+

@@ -1,0 +1,26 @@
+# ~/.config/mutt/muttrc
+# https://wiki.archlinux.org/index.php/Mutt
+
+source ~/.config/mutt/colors
+
+## General options
+
+set header_cache = "~/.cache/mutt"
+set imap_check_subscribed
+set imap_keepalive = 300
+unset imap_passive
+set mail_check = 60
+set mbox_type=Maildir
+
+## Accounts
+## https://wiki.archlinux.org/index.php/Mutt#Multiple_accounts 
+
+source ~/.config/mutt/accounts/alexandrelamberty@gmail.com
+folder-hook $folder 'source ~/.config/mutt/accounts/alexandrelamberty@gmail.com'
+
+set new_mail_command="notify-send --icon='' \
+'New Email' '%n new messages, %u unread.' &"
+
+set sidebar_visible
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats

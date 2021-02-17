@@ -1,0 +1,18 @@
+#!/bin/sh
+## Manage the streaming of video devices
+## Usage: myscript [options] ARG1
+##
+## Options:
+##   -h, --help    Display this message.
+##   -d            Dry-run; only show what would be done.
+##   -s            Dry-run; only show what would be done.
+##   -u            Dry-run; only show what would be done.
+usage() {
+  [ "$*" ] && echo "$0: $*"
+  sed -n '/^##/,/^$/s/^## \{0,1\}//p' "$0"
+  exit 2
+} 2>/dev/null
+main() {
+    echo "Webcamstream"
+  #ffmpeg -loglevel error -f v4l2 -i /dev/video0 -vcodec libx264 -preset ultrafast -tune zerolatency -thread_type slice -slices 1 -intra-refresh 1 -r 30 -g 60 -s 800x600 -aspect 4:3 -acodec aac -ar 44100 -b:v 2.5M -minrate:v 900k -maxrate:v 2.5M -bufsize:v 5M -b:a 128K -pix_fmt yuv420p -f mpegts udp://192.168.1.9:35001?pkt_size=1316
+}

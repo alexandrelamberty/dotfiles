@@ -1,0 +1,33 @@
+#!/bin/bash
+# TODO 
+# 	- Check if we already are recording
+#	- Get a kind of output information for use with windows manager 
+#	status bar ie: Polybar, i3blocks...
+#	- Remove controls for mpv
+
+PIDFILE="/var/run/user/$UID/ffmpeg.pid"
+declare -a PIDs
+
+# Create a unique filename
+filename=$(date +"%Y-%m-%d-%T") 
+
+# Start screen recording and retrieve PID
+_screen() {
+  ffmpeg -f x11grab -s 1280x800 -i :0.0 ~/videos/$filename.mkv \
+    -loglevel debug -report & dishown & \
+    PIDs+=($!)
+}
+
+while read p; do
+[[ $(ps -p "$p" -o comm=) == "ffmpeg" ]] && kill -9 "$p";
+done < $PIDFILE
+
+_screen
+
+#for i in $( xrandr -q | grep ' connected' | grep -oP '\d+x\d+\+\d+\+\d+')
+#do
+#	_screen "$i" "$1"
+#done
+
+echo  
+printf "%s\n" "${PIDs[@]}" > $PIDFILE

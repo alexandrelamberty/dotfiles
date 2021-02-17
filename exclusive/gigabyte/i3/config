@@ -1,0 +1,326 @@
+#       Testing
+#       Xresource
+#       Colors scheme
+#	Workspaces
+#	Windows
+#	Keybinds
+#	Executions
+#	Modes
+#	i3-Gaps
+#	
+# TODO: Test: Jump, Marks, Scratchpad, Sticky
+# Not working: Binding modes
+
+### Testing #####################################################################################
+
+# Jump
+
+# Marks
+
+# Scratchpad 
+# TODO: Use it as a cheatsheet viewer, need to launch the app 
+# (simple shell script that list cheatsheet file) at startup and make it a scratchad. 
+# Resizing the window would be nice to.
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# Show a specific scratchpad window, if any
+bindsym $mod+Shift+s [title="video0 - mpv"] scratchpad show
+
+## Sticky ##
+bindsym $mod+w sticky toggle
+
+
+### Xresources ################################################################################
+
+# Load configuration from .Xresource
+set_from_resource $foreground foreground #000000
+set_from_resource $background background #000000
+set_from_resource $black_0 color0 #000000
+set_from_resource $black_1 color0 #000000
+set_from_resource $red color1 #000000
+set_from_resource $green color2 #000000
+set_from_resource $yellow color3 #000000
+set_from_resource $blue color4  #000000
+set_from_resource $magenta color5 #000000
+set_from_resource $cyan color6 #000000
+set_from_resource $white color7 #000000
+
+### Colors scheme ################################################################################
+
+#133b5c #133b5c 
+# class                 border  bground text     indicator child_border
+client.focused          #090B10 #090B10 #ffcdab7 magenta   #8ab3b5
+client.focused_inactive #090B10 #090B10 #884E50  #cb6077
+client.unfocused        #090B10	#090B10 #884E50 #292D2E   #323845 
+client.urgent           #090B10 #090B10 #884E50 #900000   #900000
+client.placeholder      #090B10 #090B10 #000000  #0C0C0C
+client.background       #090B10 #090B10
+
+### Workspaces ################################################################################
+
+## Naming ##
+set $ws1 "1: term"
+set $ws2 "2: code"
+set $ws3 "3: surf"
+set $ws4 "4: gfx"
+set $ws5 "5: 5"
+set $ws6 "6: 6"
+set $ws7 "7: 7"
+set $ws8 "8: 8"
+set $ws9 "9: reading"
+set $ws10 "10: preview"
+
+workspace $ws1 output DVI-D-1-1 # Main screen
+workspace $ws2 output DVI-D-1-1 # Main screen
+workspace $ws3 output DVI-D-1-1 # Main screen
+workspace $ws4 output DVI-D-1-1 # Main screen
+workspace $ws5 output DVI-D-1-1 # Main screen 
+workspace $ws6 output DVI-D-1-1 # Main screen 
+workspace $ws7 output DVI-D-1-1 # Main screen 
+workspace $ws8 output DVI-D-1-1 # Main screen 
+workspace $ws9 output VGA1	# Left screen
+workspace $ws10 output DVI-I-1-1 # Right screen
+
+## Assign ##
+# Keeping these for the memory. Replaced the browsers with Surf and Code with Vim :)
+#assign [class="Firefox-esr"] $ws3 
+#assign [class="Chromium"] $ws3
+#assign [class="Code"] $ws2
+
+### Windows Settings ################################################################################
+title_align  center
+default_border pixel 20
+#for_window [class="Wicd-client.py" instance="wicd-client.py"] floating enable
+for_window [title="Webcam"] floating enable
+for_window [title="Webcam"] sticky enable
+for_window [title="Webcam"] border pixel 0
+for_window [class=".*"] title_format [%title]
+for_window [class="URxvt"] title_format %title %class %instance
+for_window [class="i3-frame"] title_format '%title (%id)'
+for_window [class=…] focus parent, [] title_format …, focus child
+# Add no focus and move window to bottom right
+no_focus [title="Webcam"]
+
+### Keybinds ################################################################################
+
+## Modifiers ##
+
+# Change the default Alt to the Meta key
+set $mod Mod4
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+## XFree86 Multimedia key ##
+
+#bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+#bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+#bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+#bindsym XF86Mail 	# replace with binding mode
+#bindsym XF86HomePage	exec --no-startup-id ffmpeg -f x11grab -framerate 1 -video_size 1200x500 -i :0.0 -vframes 1 ~/Pictures/screenshot_$(date +"%d-%m-%y-%H:%M:%S").jpeg
+
+## i3 ###
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# start a terminal
+bindsym $mod+Return exec xterm 
+
+# kill focused window
+bindsym $mod+Shift+a kill
+
+# show dmenu !!! ADD PATCH TO HEIGHT -h parameters
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'xos4 Terminus:pixelsize=12'
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+m focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+q focus parent
+
+# switch to workspace
+bindsym $mod+ampersand workspace $ws1
+bindsym $mod+eacute workspace $ws2
+bindsym $mod+quotedbl workspace $ws3
+bindsym $mod+apostrophe workspace $ws4
+bindsym $mod+parenleft workspace $ws5
+bindsym $mod+section workspace $ws6
+bindsym $mod+egrave workspace $ws7
+bindsym $mod+exclam workspace $ws8
+bindsym $mod+ccedilla workspace $ws9
+bindsym $mod+agrave workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+ampersand move container to workspace $ws1
+bindsym $mod+Shift+eacute move container to workspace $ws2
+bindsym $mod+Shift+quotedbl move container to workspace $ws3
+bindsym $mod+Shift+apostrophe move container to workspace $ws4
+bindsym $mod+Shift+parenleft move container to workspace $ws5
+bindsym $mod+Shift+section move container to workspace $ws6
+bindsym $mod+Shift+egrave move container to workspace $ws7
+bindsym $mod+Shift+exclam move container to workspace $ws8
+bindsym $mod+Shift+ccedilla move container to workspace $ws9
+bindsym $mod+Shift+agrave move container to workspace $ws10
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym m resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+### Executions ###
+
+exec_always --no-startup-id $HOME/.screenlayout/layout-4-screens.sh & 
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend.
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh & 
+exec --no-startup-id nitrogen --restore &
+exec --no-startup-id dunst &
+exec --no-startup-id picom -b &
+exec --no-startup-id unclutter
+### Modes ###
+
+# Apps mode
+
+bindsym $mod+Shift+o mode "$mode_apps"
+set $mode_apps Launch: [c]chromium [v]vim [r]ranger [s]surf
+mode "$mode_apps" {
+      bindsym c exec chromium;  exec --no-startup-id xdotool key "Escape"
+      bindsym v exec urxvt -e vim; exec --no-startup-id xdotool key "Escape"
+      bindsym r exec urxvt -e ranger; exec --no-startup-id xdotool key "Escape"
+      bindsym s exec tabbed surf -e; exec --no-startup-id xdotool key "Escape"
+      bindsym Return mode "default"
+      bindsym Escape mode "default"
+}
+
+### i3-gaps  ###
+
+# Necessary for i3-gaps to work properly (pixel can be any value)
+for_window [class="^.*"] border pixel 1
+
+# Smart Gaps
+smart_gaps on
+
+# Smart Borders
+smart_borders on
+
+# Set inner/outer gaps
+gaps inner 10 
+gaps outer 0
+
+# Gaps mode
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "defaur"
+}

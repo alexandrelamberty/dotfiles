@@ -1,0 +1,4 @@
+# ~/.asoundrc
+# https://www.alsa-project.org/wiki/Asoundrc
+defaults.pcm.card 0 
+defaults.ctl.card 0 

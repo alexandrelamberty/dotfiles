@@ -1,0 +1,2 @@
+common/mutt/accounts/*
+!username@gmail.com

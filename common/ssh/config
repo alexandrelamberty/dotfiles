@@ -1,0 +1,19 @@
+# ~/.ssh/config
+# Configuration file OpenSSH 
+
+AddKeysToAgent yes
+
+Host github.com
+  Hostname github.com
+  User alexandrelamberty
+  PubKeyAuthentication yes
+  IdentityFile ~/.ssh/github
+
+Host gitlab.com
+  Hostname gitlab.com
+  User alexandrelamberty
+  PubKeyAuthentication yes
+  IdentityFile ~/.ssh/id_rsa
+
+
+

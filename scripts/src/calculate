@@ -1,0 +1,3 @@
+#!/bin/bash
+# Wrapper for bc
+printf "%s\n" "$*" | bc

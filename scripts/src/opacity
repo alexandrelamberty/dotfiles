@@ -1,0 +1,10 @@
+#!/bin/bash
+file=~/.config/picom/picom.conf
+$(cp $file $file.bak)
+ostr=$(awk '/^active-opacity = /{print}' $file) 
+opacity=$(awk '/^active-opacity = /{print $3}' $file) 
+new_opacity=$1
+nstr="active-opacity = $new_opacity"
+sed -i "s/$ostr/$nstr/" $file
+echo "Opacity set to : $new_opacity"
+

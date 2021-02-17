@@ -1,0 +1,17 @@
+#!/bin/bash
+# Make all folder in the directory to lower case.
+directory="$1"
+echo $directory
+for dir in "$directory"/*
+do
+  if [ -d "$dir" ]
+  then
+    dirn="$(dirname "${dir}")"
+    basen="$(basename "${dir}")"
+    newn="${basen,,}"
+    strip="${newn// /_}"
+    echo "$dir"
+    echo "$dirn/$strip"
+    #mv "$dir" "$dirn/$strip"
+  fi
+done

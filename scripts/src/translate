@@ -1,0 +1,12 @@
+#!/bin/bash
+# ex: translate [input_language] [output_language] [string]
+sl=$1
+tl=$2
+shift 2
+base_url="https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sl}&tl=${tl}&dt=t&q="
+ua='Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
+qry=$( echo $@ | sed -e "s/\ /+/g" )
+full_url=${base_url}${qry}
+response=$(curl -sA "${ua}" "${full_url}")
+#echo ${response} > ~/url
+echo ${response} | jq -r '.[0][0][0]'

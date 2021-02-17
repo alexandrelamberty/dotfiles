@@ -1,0 +1,6 @@
+#!/bin/bash
+ps=$(docker ps | wc -l)
+if [ $ps -gt 1 ] 
+then
+ echo -e %{F#f00} $(($ps-1))
+fi

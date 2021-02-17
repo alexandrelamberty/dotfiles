@@ -1,0 +1,6 @@
+#!/bin/bash
+# Check Robs script for github
+if [[ ! -z $1 ]]; then
+    xdg-open "$1" & disown
+fi
+exit 0

@@ -1,0 +1,23 @@
+# Common user-level configuration dotfile
+
+- Alacritty
+- Alsa
+- Bash
+- Dmenu
+- Dunst
+- Irssi
+- Mpv
+- Mutt
+- Newsboat
+- Nitrogen
+- Pacman
+- Picom
+- Ranger
+- Screenkey
+- Tmux
+- Urxvt
+- Vim
+- Weechat
+- Xrdb
+- Xscreensaver
+- Zathura

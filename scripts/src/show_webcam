@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Start mpv to show the webcam output at half scale
+mpv /dev/video0 --window-scale=0.3 --geometry=300x200-30-30 &
