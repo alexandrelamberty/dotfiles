@@ -4,6 +4,10 @@
 
 The dotfiles are split into 2 categories, `common` and `exclusive`. The `common` are shared accros multiple installation and the `exclusive` are for specific configuration, computers.
 
+TODO: I need to split this configuration into git branches maybe ?!
+
+
+
 ## TODO
 
 - Clean fonts, add wallpapers, icons and sounds.

@@ -1,4 +1,3 @@
 #!/usr/bin/sh
-# View file with helper
-# CSV Helper
-column -s, -t < somefile.csv | less -#2 -N -S
+# CSV formating   
+column -s, -t < "$*" | less -#2 -N -S

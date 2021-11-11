@@ -1,5 +1,3 @@
 #!/bin/bash
 # Return the date
-#qry=$( echo $@ | sed -e "s/\ /+/g" )
-#echo $qry
-date +'%F %T'
+#date +'%F %T'

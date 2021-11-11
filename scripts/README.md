@@ -1,159 +1,127 @@
 # Scripts
 
-Most of theses scripts are generic, some require specific softwares. Some other require a little tweak depending on the hardware they run onto. 
+Most of theses scripts are generic, some require specific softwares. Some other require a little tweak depending on the hardware they run onto.
 
 I don't want to start splitting theses scripts!
+
 ## Available scripts
 
-### bing 
+### bing
 
 Launch the lynx browser and search with bing the passed argument
 
-### calculate 
+### calculate
 
 Wrapper for bc
 
-### csv 
+### csv
 
 View file with helperCSV Helper
 
-### datetime 
+### datetime
 
+Return the date
 
+### define
 
-### define 
+### docker_ps
 
-
-
-### docker_ps 
-
-
-
-### files_rename 
+### files_rename
 
 Rename all the markdown file of the current directoryto README.md
 
-### fuzzyfind 
+### fuzzyfind
 
 fuzzy_win launches the script from param in a centered window
 
-### gito 
+### gito
 
 Script that open the github reposotiry of a git directory
 
-### m2h 
+### m2h
 
-
-
-### make_folders_lower_case 
+### make_folders_lower_case
 
 Make all folder in the directory to lower case.
 
-### movetonamedir 
+### movetonamedir
 
 For each markdown files in the target directoryit create a folder based on the name and move the file in it
 
-### opacity 
+### opacity
 
-
-
-### open 
+### open
 
 Check Robs script for github
 
-### play 
+### play
 
+### play.sh
 
+### query
 
-### play.sh 
-
-
-
-### query 
-
-
-
-### screenshot 
+### screenshot
 
 Create a screenshot with scrot
 
-### search 
+### search
 
+### search-engines.list
 
-
-### search-engines.list 
-
-
-
-### set_title 
+### set_title
 
 Depends on: xdotool, wmctrl
 
-### show_webcam 
+### show_webcam
 
 Start mpv to show the webcam output at half scale
 
-### signpdf 
+### signpdf
 
-Sign a pdfhttps://gist.github.com/chrpinedo/a2a2af757e96aec0d6f69d707629a01ahttps://superuser.com/questions/452759/how-to-add-a-picture-onto-an-existing-pdf-filesignpdf -document Doc.pdf -offset "-10cm -10cm" -page 1 -n Doc_signed.pdf
+Sign a pdf https://gist.github.com/chrpinedo/a2a2af757e96aec0d6f69d707629a01ahttps://superuser.com/questions/452759/how-to-add-a-picture-onto-an-existing-pdf-file
 
-### slug 
+```bash
+signpdf -document Doc.pdf -offset "-10cm -10cm" -page 1 -n Doc_signed.pdf
+```
 
+### slug
 
+### start_screen_recording
 
-### start_screen_recording 
+TODO - Check if we already are recordingCreate a unique filenameStart screen recording and retrieve PID
 
-TODO 	- Check if we already are recordingCreate a unique filenameStart screen recording and retrieve PID
+### status_screen_recording
 
-### status_screen_recording 
+Status Screen RecordingShow size and time of a video filesRetrieve last file by timestamp
 
-Status Screen RecordingShow size and time of a video filesRetrieve last file by timestamp 
-
-### stop_screen_recording 
+### stop_screen_recording
 
 Stop ScreencastingKill the ffmpeg and mpv process created when starting the screencast
 
-### switch_audio 
+### switch_audio
 
+### system_service
 
-
-### system_service 
-
-
-
-### system-usb-udev 
+### system-usb-udev
 
 Copy 95-usb.rules to /etc/udev/rules.d/95-usb.rules.Make sure that the paths in the file have been modified properly.https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/system-usb-udev
 
-### takebreak 
+### takebreak
 
-
-
-### translate 
+### translate
 
 ex: translate [input_language] [output_language] [string]
 
-### update_arch 
+### update_arch
 
 Check for pacman and yay update on Arch linux distribition.
 
-### videobg 
+### videobg
 
+### videobgkill
 
+### webcam
 
-### videobgkill 
+### webcamstream
 
-
-
-### webcam 
-
-
-
-### webcamstream 
-
-
-
-### whouseport 
-
-
-
+### whouseport

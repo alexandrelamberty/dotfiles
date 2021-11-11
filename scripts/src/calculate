@@ -1,3 +1,3 @@
 #!/bin/bash
-# Wrapper for bc
+# Use the bc command with the passed argument
 printf "%s\n" "$*" | bc

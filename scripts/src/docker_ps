@@ -1,4 +1,5 @@
 #!/bin/bash
+# TODO: Script used by my polybar setup need to be moved
 ps=$(docker ps | wc -l)
 if [ $ps -gt 1 ] 
 then

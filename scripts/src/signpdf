@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Sign a pdf
 # https://gist.github.com/chrpinedo/a2a2af757e96aec0d6f69d707629a01a
 # https://superuser.com/questions/452759/how-to-add-a-picture-onto-an-existing-pdf-file
@@ -23,7 +23,7 @@ done
 
 # Create the template signature page
 echo "- Creating template..."
-pdfjam --paper 'a4paper' --scale 0.3 --offset '+2cm -10cm' --outfile _stamp.pdf $signature > /dev/null 2>&1
+pdfjam --paper 'a4paper' --scale 0.3 --offset '+3cm -11cm' --outfile _stamp.pdf $signature > /dev/null 2>&1
 
 # Create blank A4 page
 echo "- Creating blank pages..."
