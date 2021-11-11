@@ -1,5 +1,19 @@
 # Common user-level configuration dotfile
 
+I use stow
+
+Simulate the installation of zsh
+
+```bash
+stow -nvSt ~ zsh
+```
+
+Install zsh
+
+```bash
+stow -vSt ~ zsh
+```
+
 - Alacritty
 - Alsa
 - Bash
@@ -7,7 +21,7 @@
 - Dunst
 - Irssi
 - Mpv
-- Mutt
+- Muttw
 - Newsboat
 - Nitrogen
 - Pacman

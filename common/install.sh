@@ -118,3 +118,9 @@ fi
 if [[ -d "$HOME/.config/zathura" ]]; then
   ln -sf "$PWD/zathura/zathurarc" "$HOME/.config/zathura/zathurarc"
 fi
+
+# zsh
+[[ -d "$HOME/.config/zsh" ]] || mkdir -p "$HOME/.config/zsh"
+if [[ -d "$HOME/.config/zsh" ]]; then
+  ln -sf "$PWD/zsh/zshrc" "$HOME/.config/zsh/zshrc"
+fi

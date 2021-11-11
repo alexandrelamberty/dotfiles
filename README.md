@@ -6,24 +6,22 @@ The dotfiles are split into 2 categories, `common` and `exclusive`. The `common`
 
 TODO: I need to split this configuration into git branches maybe ?!
 
-
-
 ## TODO
 
 - Clean fonts, add wallpapers, icons and sounds.
-- Check for security issues, mutt and others need crendentials. 
+- Check for security issues, mutt and others need crendentials.
 
-## Base  
+## Base
 
 These are the sofwares I use and their configuration file(s) if there are.
 
 - Alacritty (Terminal emulator)
 - Alsa (Advanced Linux Sound Architecture)
-- Aseprite (Pixel graphics editor) 
+- Aseprite (Pixel graphics editor)
 - Bash (Shell)
 - Clang (C, C++)
 - Cloc (Count line of code)
-- Colorpicker 
+- Colorpicker
 - Cups (Printer)
 - Curl
 - Dmenu
@@ -68,9 +66,9 @@ These are the sofwares I use and their configuration file(s) if there are.
 - Xmodmap (Keymaps and pointer button mappings in Xorg)
 - Xprop (Window and font properties in an X server)
 - Xrdb (Xresource database manager)
-- Xscreensaver 
+- Xscreensaver
 - Zathura (PDF viewer)
-- Zsh (I don't really use this) 
+- Zsh (I don't really use this)
 
 ## Windows Manager ans Status bars
 
