@@ -16,6 +16,7 @@ ln -sf "$PWD/alsa/asoundrc" "$HOME/.asoundrc"
 
 # bash
 ln -sf "$PWD/bash/bashrc" "$HOME/.bashrc"
+ln -sf "$PWD/bash/bash_profile" "$HOME/.bash_profile"
 
 # dmenu
 # Need to fork it and customize it
