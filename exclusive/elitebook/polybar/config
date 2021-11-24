@@ -51,18 +51,18 @@ tray-scale = 1
 
 [bar/top]
 inherit = section/base
-modules-left =  powermenu i3 
-modules-center = xwindow
-modules-right = docker pacman mutt alsa date  
+modules-left =  powermenu i3 xwindow
+modules-center = 
+modules-right =  mutt alsa date  
 tray-position = right
 tray-padding = 0 
 
 [bar/bottom]
 inherit = section/base
 bottom = true
-modules-left =  eth wlan networkspeeddown networkspeedup localeip
+modules-left =  eth wlan networkspeeddown networkspeedup localeip pacman  
 modules-center = screencasting webcam 
-modules-right = services filesystem memory cpu temperature battery
+modules-right = docker services filesystem memory cpu temperature battery
 
 [module/system-usb-udev]
 type = custom/script
@@ -159,7 +159,7 @@ type = internal/fs
 interval = 60
 mount-0 = /
 mount-1 = /home
-label-mounted =   %mountpoint% %free%
+label-mounted =   %free%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 

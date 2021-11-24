@@ -1,4 +1,5 @@
 " ~/.vimrc
+
 " Install vim-plug if not already installed
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -262,6 +263,7 @@ function! LastModified()
   endif
 endfun
 autocmd BufWritePre * call LastModified()
+
 " If buffer opened insert '# Day, Month, Year HH:MM:SS' at the top of the
 " document
 function! AddDate()
@@ -270,11 +272,12 @@ endfun
 autocmd BufRead ~/alexandrelamberty/todos/README.md call AddDate()
 
 function! Generate()
+  echom "Generate..."
   " Look for a generate script
   if !empty(glob("generate"))
      execute("!bash ./generate")
   endif
 endfun
-autocmd BufEnter * call Generate()
+"autocmd BufWritePre * call Generate()
 
 
