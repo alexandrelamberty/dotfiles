@@ -1,0 +1,38 @@
+# ~/.newsboat/config
+include ~/.newsboat/colors
+
+auto-reload yes
+browser "xdg-open %u"
+
+# macros
+macro w set browser "surf %u >/dev/null 2>&1 &"; open-in-browser ; set browser surf
+macro v set browser "setsid -f mpv --really-quiet --no-terminal" ; open-in-browser ; set browser surf
+macro d set browser "youtube-dl %u &"; open-in-browser-noninteractively; set browser surf
+macro y set browser "mpv %u" ; open-in-browser ; set browser "elinks %u"
+
+# unbind keys
+unbind-key ENTER
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+
+# bind keys
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
+
+# colors 
+color background         default   default
+color listnormal         default   default
+color listnormal_unread  default   default
+color listfocus          black     cyan
+color listfocus_unread   black     cyan
+color info               default   black
+color article            default   default
+
+# highlights
+highlight article "^(Title):.*$" blue default
+highlight article "https?://[^ ]+" red default
+highlight article "\\[image\\ [0-9]+\\]" green default

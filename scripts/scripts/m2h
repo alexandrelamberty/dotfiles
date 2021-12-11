@@ -1,0 +1,6 @@
+#!/bin/sh
+# Transform a Markdown file into and HTML with Pandoc.
+# TODO: Check for pandoc css template
+file=$1
+filename="${file%.*}"
+`pandoc $file -t html -o $filename`

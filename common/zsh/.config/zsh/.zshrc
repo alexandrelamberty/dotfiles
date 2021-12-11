@@ -12,7 +12,6 @@ zle_highlight=('paste:none')
 # beeping is annoying
 unsetopt BEEP
 
-
 # completions
 autoload -Uz compinit
 zstyle ':completion:*' menu select
@@ -27,7 +26,7 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
 # Colors
-autoload -Uz colors && colors
+#autoload -Uz colors && colors
 
 # Useful Functions
 source "$ZDOTDIR/zsh-functions"

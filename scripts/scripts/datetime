@@ -1,0 +1,3 @@
+#!/bin/bash
+# Return the date
+date +'%F %T'

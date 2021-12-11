@@ -1,0 +1,3 @@
+# ~/.scrc
+set color
+color 1 = @white;@color0

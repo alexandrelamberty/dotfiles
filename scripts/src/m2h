@@ -1,4 +1,0 @@
-#!/bin/sh
-file=$1
-filename="${file%.*}"
-`pandoc $file -t html -o $filename`

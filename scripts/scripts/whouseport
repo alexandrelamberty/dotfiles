@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Whouse port: $1"
+netstat -tulpn | grep :$1

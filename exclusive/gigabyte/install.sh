@@ -8,17 +8,10 @@
 echo "Installing i3, Polybar and Xinit config for Gigabyte Z77X-D3H"
 
 # i3
-[[ -d "$HOME/.config/i3" ]] || mkdir -p "$HOME/.config/i3"
-if [[ -d "$HOME/.config/i3" ]]; then
-  ln -sf "$PWD/i3/config" "$HOME/.config/i3/config"
-fi
+stow -t ~/ -S i3
 
 # Polybar
-[[ -d "$HOME/.config/polybar" ]] || mkdir -p "$HOME/.config/polybar"
-if [[ -d "$HOME/.config/polybar" ]]; then
-  ln -sf "$PWD/polybar/config" "$HOME/.config/polybar/config"
-  ln -sf "$PWD/polybar/launch.sh" "$HOME/.config/polybar/launch.sh"
-fi
+stow -t ~/ -S polybar 
 
 # Xinit
-ln -sf "$PWD/xinit/xinitrc" "$HOME/.xinitrc"
+stow -t ~/ -S xinit 

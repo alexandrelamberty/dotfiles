@@ -1,0 +1,4 @@
+# vim:ft=bash
+# Script that open the github reposotiry of a git directory
+PWD=pwd
+echo PWD

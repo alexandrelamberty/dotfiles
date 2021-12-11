@@ -1,9 +1,0 @@
-#!/bin/bash
-# Stop Screencasting
-# 
-# Kill the ffmpeg and mpv process created when starting the screencast
-
-kill $(ps aux | grep 'ffmpeg' | awk '{print $2}')
-
-kill $(ps aux | grep 'mpv' | awk '{print $2}')
-echo  

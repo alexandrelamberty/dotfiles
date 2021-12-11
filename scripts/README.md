@@ -1,6 +1,7 @@
 # Scripts
 
-Most of theses scripts are generic, some require specific softwares. Some other require a little tweak depending on the hardware they run onto.
+Most of theses scripts are generic, some require specific softwares. Some other
+require a little tweak depending on the hardware they run.
 
 I don't want to start splitting theses scripts!
 
@@ -46,7 +47,8 @@ Make all folder in the directory to lower case.
 
 ### movetonamedir
 
-For each markdown files in the target directoryit create a folder based on the name and move the file in it
+For each markdown files in the target directoryit create a folder based on the
+name and move the file in it
 
 ### opacity
 
@@ -78,25 +80,25 @@ Start mpv to show the webcam output at half scale
 
 ### signpdf
 
-Sign a pdf https://gist.github.com/chrpinedo/a2a2af757e96aec0d6f69d707629a01ahttps://superuser.com/questions/452759/how-to-add-a-picture-onto-an-existing-pdf-file
-
-```bash
-signpdf -document Doc.pdf -offset "-10cm -10cm" -page 1 -n Doc_signed.pdf
-```
+Sign a pdf
+https://gist.github.com/chrpinedo/a2a2af757e96aec0d6f69d707629a01ahttps://superuser.com/questions/452759/how-to-add-a-picture-onto-an-existing-pdf-file
 
 ### slug
 
 ### start_screen_recording
 
-TODO - Check if we already are recordingCreate a unique filenameStart screen recording and retrieve PID
+TODO - Check if we already are recordingCreate a unique filenameStart screen
+recording and retrieve PID
 
 ### status_screen_recording
 
-Status Screen RecordingShow size and time of a video filesRetrieve last file by timestamp
+Status Screen RecordingShow size and time of a video filesRetrieve last file by
+timestamp
 
 ### stop_screen_recording
 
-Stop ScreencastingKill the ffmpeg and mpv process created when starting the screencast
+Stop ScreencastingKill the ffmpeg and mpv process created when starting the
+screencast
 
 ### switch_audio
 
@@ -104,7 +106,9 @@ Stop ScreencastingKill the ffmpeg and mpv process created when starting the scre
 
 ### system-usb-udev
 
-Copy 95-usb.rules to /etc/udev/rules.d/95-usb.rules.Make sure that the paths in the file have been modified properly.https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/system-usb-udev
+Copy 95-usb.rules to /etc/udev/rules.d/95-usb.rules.Make sure that the paths in
+the file have been modified
+properly.https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/system-usb-udev
 
 ### takebreak
 

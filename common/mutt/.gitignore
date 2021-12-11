@@ -1,2 +1,2 @@
-accounts/*
+.config/mutt/accounts/*
 !username@gmail.com

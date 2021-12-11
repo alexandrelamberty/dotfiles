@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ ! -z $1 ]]; then
+	# Check if git repos then open githubpage
+    xdg-open "$1" & disown
+fi
+exit 0
