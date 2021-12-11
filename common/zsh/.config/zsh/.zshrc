@@ -26,8 +26,13 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
 # Colors
-#autoload -Uz colors && colors
-
+autoload -Uz colors && colors
+# colors for ls
+if [[ -f ~/.dir_colors ]] ; then
+    eval $(dircolors -b ~/.dir_colors)
+elif [[ -f /etc/DIR_COLORS ]] ; then
+    eval $(dircolors -b /etc/DIR_COLORS)
+fi
 # Useful Functions
 source "$ZDOTDIR/zsh-functions"
 
@@ -79,14 +84,4 @@ autoload edit-command-line; zle -N edit-command-line
 export EDITOR="nvim"
 export TERMINAL="urxvt"
 export BROWSER="google-chrome-stable"
-
-# TODO Remove these
-# setxkbmap -option caps:escape
-# xset r rate 210 40
-# Speedy keys
-# xset r rate 210 40
-# remap caps to escape
-# setxkbmap -option caps:escape
-# swap escape and caps
-# setxkbmap -option caps:swapescape
 
