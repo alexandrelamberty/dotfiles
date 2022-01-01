@@ -27,7 +27,6 @@ zle -N down-line-or-beginning-search
 
 # Colors
 autoload -Uz colors && colors
-
 # colors for ls
 if [[ -f ~/.dir_colors ]] ; then
     eval $(dircolors -b ~/.dir_colors)
