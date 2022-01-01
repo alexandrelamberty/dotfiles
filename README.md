@@ -94,10 +94,21 @@ Theses resources are needed by some of my configurations files.
 
 ### Fonts
 
+`~/.local/share/fonts/`
+
 ### Icons
 
 The icons are mainly and only at the moment used for the notification system [Dunst](https://github.com/dunst-project/dunst)
 
+`~/.local/share/icons/`
+
 ### Sounds
 
+`~/.local/share/sounds/`
+
 ### Wallpapers
+
+`~/.local/share/wallpapers/`
+## References
+
+- [XDG Base Directory](https://wiki.archlinux.org/title/XDG_Base_Directory)

@@ -36,7 +36,3 @@ zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}[%{$fg[red]%}%m%u%c%{$fg[yellow]
 PROMPT="%{$fg[green]%}%~\$vcs_info_msg_0_%{$reset_color%}$ "
 #prompt="\[\033[0;34m\]\W\$(parse_git_branch)\$(add_venv_info)\[\033[0;33m\] $\[\033[00m\] ";
 #PROMPT+="\$vcs_info_msg_0_ "
-
-# TODO look into this for more colors
-# https://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
-# also ascii escape codes

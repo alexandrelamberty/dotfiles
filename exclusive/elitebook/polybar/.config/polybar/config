@@ -52,17 +52,17 @@ tray-scale = 1
 [bar/top]
 inherit = section/base
 modules-left =  powermenu i3 xwindow
-modules-center = 
-modules-right =  mutt alsa date  
+modules-center =   
+modules-right = screencasting webcam alsa date  
 tray-position = right
 tray-padding = 0 
 
 [bar/bottom]
 inherit = section/base
 bottom = true
-modules-left =  eth wlan networkspeeddown networkspeedup localeip pacman  
-modules-center = screencasting webcam 
-modules-right = docker services filesystem memory cpu temperature battery
+modules-left =  eth wlan networkspeeddown networkspeedup localeip   
+modules-center = pacman kernel
+modules-right = docker  services filesystem memory cpu temperature battery
 
 [module/system-usb-udev]
 type = custom/script
@@ -78,11 +78,18 @@ label =   %output%
 exec = ~/.local/bin/scripts/docker_ps   
 interval = 3600
 
+[module/kernel]
+type = custom/script
+format = <label>
+label =   %output%
+exec = ~/.config/polybar/scripts/kernel.sh
+interval = 3600
+
 [module/pacman]
 type = custom/script
 format = <label>
-label =   %output%
-exec = ~/.local/bin/scripts/update_arch
+label = ﯟ  %output%
+exec = ~/.config/polybar/scripts/arch.sh
 interval = 3600
 
 [module/webcam]
@@ -107,7 +114,7 @@ click-right = polybar-msg -p %pid% hook screencasting 3
 type = custom/script
 exec = systemctl --type=service --state=running list-units --no-pager | grep running | wc -l
 interval = 10
-label = Services %output%
+label =   %output%
 click-left = ~/.local/bin/scripts/system_service
 
 [module/mutt]
@@ -295,31 +302,6 @@ format = <label>
 format-prefix = " "
 format-prefix-padding-right = 1
 format-foreground = ${colors.secondary}
-
-[module/pulseaudio]
-type = internal/pulseaudio
-format-volume-prefix = VOL
-format-volume = <label-volume> <bar-volume>
-label-volume = %percentage%%
-label-volume-foreground = ${colors.secondary}
-label-muted = 🔇 muted
-label-muted-foreground = ${colors.secondary}
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/alsa]
 type = internal/alsa
