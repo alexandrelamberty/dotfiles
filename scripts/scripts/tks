@@ -1,0 +1,9 @@
+#!/bin/bash
+# Tmux Kill Session FZF Helper
+session=$(tmux ls | sed -E "s/:.*$//" | fzf --reverse --height 40%)
+
+if [[ $session ]]; then
+  tmux kill-session -t session
+fi
+
+return 0

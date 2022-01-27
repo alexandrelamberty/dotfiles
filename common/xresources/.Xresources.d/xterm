@@ -1,5 +1,5 @@
 ! vim: set filetype=xdefaults :
-XTerm*faceName: SauceCode Pro Nerd Font:style:Regular:size=12
+XTerm*faceName: SauceCode Pro Nerd Font:style:Regular:size=10
 XTerm*borderWidth: 0 
 Xterm*ScrollBar: false
 XTerm*RightScrollBar: false
