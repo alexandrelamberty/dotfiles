@@ -51,7 +51,7 @@ tray-scale = 1
 
 [bar/top]
 inherit = section/base
-modules-left =  powermenu i3 xwindow
+modules-left =   powermenu i3 xwindow
 modules-center =   
 modules-right = screencasting webcam alsa date  
 tray-position = right
@@ -62,7 +62,7 @@ inherit = section/base
 bottom = true
 modules-left =  eth wlan networkspeeddown networkspeedup localeip   
 modules-center = pacman kernel
-modules-right = docker  services filesystem memory cpu temperature battery
+modules-right = docker nodejs services filesystem memory cpu temperature battery
 
 [module/system-usb-udev]
 type = custom/script
@@ -70,6 +70,13 @@ exec = ~/.local/bin/scripts/system-usb-udev
 tail = true
 click-left = ~/.local/bin/scripts/system-usb-udev --mount &
 click-right = ~/.local/bin/scripts/system-usb-udev --unmount &
+
+[module/tmux]
+type = custom/script
+format = <label>
+label =   %output%
+exec = ~/.config/polybar/scripts/tmux_session.sh   
+interval = 3600
 
 [module/docker]
 type = custom/script
@@ -83,6 +90,13 @@ type = custom/script
 format = <label>
 label =   %output%
 exec = ~/.config/polybar/scripts/kernel.sh
+interval = 3600
+
+[module/nodejs]
+type = custom/script
+format = <label>
+label =   %output%
+exec = ~/.config/polybar/scripts/node_process.sh
 interval = 3600
 
 [module/pacman]
@@ -368,9 +382,12 @@ animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
 thermal-zone = 0
 interval = 0.5
 warn-temperature = 60
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
 hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp2_input
 format = <ramp> <label>
 format-underline = #f50a4d

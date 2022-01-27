@@ -33,6 +33,12 @@
 *.color7:  #a89984
 *.color15: #ebdbb2
 
+! sxiv
+Sxiv.font: lucy tewi
+Sxiv.foreground: #0F111A
+Sxiv.background: #0F111A
+
+
 !#include ".Xresources.d/fonts"
 #include ".Xresources.d/xterm"
 !#include ".Xresources.d/xscreensaver"

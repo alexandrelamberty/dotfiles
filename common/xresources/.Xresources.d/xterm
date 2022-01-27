@@ -3,7 +3,7 @@ XTerm*faceName: SauceCode Pro Nerd Font:style:Regular:size=10
 XTerm*borderWidth: 0 
 Xterm*ScrollBar: false
 XTerm*RightScrollBar: false
-XTerm*internalBorder: 0
+XTerm*internalBorder: 5
 xterm*Thickness: 0 
 XTerm*cursorBlink: true
 

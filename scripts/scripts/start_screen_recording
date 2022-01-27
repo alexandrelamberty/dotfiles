@@ -14,6 +14,9 @@ filename=$(date +"%Y-%m-%d-%T")
 # Start screen recording and retrieve PID
 _screen() {
   ffmpeg -f x11grab -s 1280x800 -i :0.0 ~/videos/$filename.mkv \
+	-f alsa \
+	-i hw:0 \
+	-preset veryfast \
     -loglevel debug -report & dishown & \
     PIDs+=($!)
 }
@@ -29,5 +32,5 @@ _screen
 #	_screen "$i" "$1"
 #done
 
-echo  
 printf "%s\n" "${PIDs[@]}" > $PIDFILE
+echo  

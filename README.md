@@ -2,14 +2,15 @@
 
 ![Screenshot](./screenshot_08-04-21-17:35:54.png)
 
-The dotfiles are split into 2 categories, `common` and `exclusive`. The `common` are shared accros multiple installation and the `exclusive` are for specific configuration, computers.
-
-TODO: I need to split this configuration into git branches maybe ?!
+The dotfiles are split into 2 categories, `common` and `exclusive`. The
+`common` are shared across multiple installation and the `exclusive` are for
+specific configuration, computers.
 
 ## TODO
 
-- Clean fonts, add wallpapers, icons and sounds.
-- Check for security issues, mutt and others need crendentials.
+- [ ] Split this configuration into git branches? 
+- [ ] Clean fonts, add wallpapers, icons and sounds
+- [ ] Check for security issues, mutt and others need credential
 
 ## Base
 
@@ -98,7 +99,8 @@ Theses resources are needed by some of my configurations files.
 
 ### Icons
 
-The icons are mainly and only at the moment used for the notification system [Dunst](https://github.com/dunst-project/dunst)
+The icons are mainly and only at the moment used for the notification system
+[Dunst](https://github.com/dunst-project/dunst)
 
 `~/.local/share/icons/`
 
@@ -109,6 +111,7 @@ The icons are mainly and only at the moment used for the notification system [Du
 ### Wallpapers
 
 `~/.local/share/wallpapers/`
+
 ## References
 
 - [XDG Base Directory](https://wiki.archlinux.org/title/XDG_Base_Directory)

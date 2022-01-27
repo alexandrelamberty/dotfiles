@@ -9,7 +9,6 @@
 #	i3-Gaps
 #	
 # TODO: Test: Jump, Marks, Scratchpad, Sticky
-# Not working: Binding modes
 
 ### Testing ###
 
@@ -18,9 +17,6 @@
 # Marks
 
 # Scratchpad 
-# TODO: Use it as a cheatsheet viewer, need to launch the app 
-# (simple shell script that list cheatsheet file) at startup and make it a scratchad. 
-# Resizing the window would be nice to.
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -33,7 +29,6 @@ bindsym $mod+Shift+s [title="video0 - mpv"] scratchpad show
 
 ## Sticky ##
 bindsym $mod+w sticky toggle
-
 
 ### X resources ###
 
@@ -53,10 +48,10 @@ set_from_resource $white color7 #000000
 ### Colors scheme ###
 #133b5c #133b5c 
 # class                 border  bground text     indicator child_border
-client.focused          #090B10 #090B10 #fabd2f  magenta   #090B10
-client.focused_inactive #090B10 #090B10 #282828  #cb6077
-client.unfocused        #090B10	#090B10 #282828  #292D2E   #323845 
-client.urgent           #090B10 #090B10 #884E50  #900000   #900000
+client.focused          #090B10 #090B10 #fabd2f  #282828   #4A6266
+client.focused_inactive #090B10 #090B10 #282828  #cb6077   #090B10
+client.unfocused        #090B10	#090B10 #282828  #292D2E   #090B10
+client.urgent           #090B10 #090B10 #884E50  #900000   #090B10
 client.placeholder      #090B10 #090B10 #000000  #0C0C0C
 client.background       #090B10 #090B10
 
@@ -74,25 +69,23 @@ set $ws8 "8: 8"
 set $ws9 "9: 9"
 set $ws0 "10: 10"
 
-## Assign ##
-# Keeping these for the memory. Replaced the browsers with Surf and Code with Vim :)
-#assign [class="Firefox-esr"] $ws3 
-#assign [class="Chromium"] $ws3
-#assign [class="Code"] $ws2
 
 ### Windows Settings ###
+floating_minimum_size 75 x 50
+floating_maximum_size -1 x -1
+
 title_align  center
 default_border pixel 20
-#for_window [class="Wicd-client.py" instance="wicd-client.py"] floating enable
+
 for_window [title="video0 - mpv"] floating enable
 for_window [title="video0 - mpv"] sticky enable
 for_window [title="video0 - mpv"] border pixel 0
+no_focus [title="video0 - mpv"]
+
 for_window [class=".*"] title_format [%title]
-for_window [class="URxvt"] title_format %title %class %instance
+for_window [class="xterm"] title_format %title %class %instance
 for_window [class="i3-frame"] title_format '%title (%id)'
 for_window [class=…] focus parent, [] title_format …, focus child
-# Add no focus and move window to bottom right
-no_focus [title="video0 - mpv"]
 
 ### Keybinds ###
 
@@ -121,9 +114,6 @@ bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # start a terminal
 bindsym $mod+Return exec xterm 
@@ -234,6 +224,7 @@ bindsym $mod+b exec tabbed surf -e
 # screen before suspend.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# TODO Check what to move to xinit
 # Launch Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &
 
