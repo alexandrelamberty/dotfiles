@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# Personal
+alias ideas='nvim ./ideas/README.md'
+alias todos='nvim ./todos/README.md'
+alias topics='nvim ./topics/README.md'
+
+# wifi
+alias whome="nmcli dev wifi connect WiFi-2.4-62E0 password c6RC9zk3aR2P "
+
 # Zsh
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
@@ -7,6 +15,10 @@ alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git
 alias nvimrc='nvim ~/.config/nvim/'
 alias zshrc='nvim ~/.config/zsh/'
 alias tmuxrc='nvim ~/.tmux.conf'
+
+# Nvim
+alias nv='nvim'
+alias nvi='nvim ./'
 
 # Tmux see: stdin, pipe ...
 alias tas='tmux attach-session -t $(tmux ls | sed -E "s/:.*$//" | fzf --reverse --height 40%)'
@@ -31,6 +43,9 @@ alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
 
+# ls
+alias ls='ls --color=auto'
+alias ll='ls -1'
 # easier to read disk
 alias df='df -h'     # human-readable sizes
 alias free='free -m' # show sizes in MB
@@ -45,7 +60,7 @@ alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # systemd
-alias mach_list_systemctl="systemctl list-unit-files --state=enabled"
+alias xsystemctl="systemctl list-unit-files --state=enabled"
 
 # git
 alias m="git checkout master"

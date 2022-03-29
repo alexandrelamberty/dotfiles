@@ -1,4 +1,11 @@
 #!/bin/sh
+
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+
+
 export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
 setopt appendhistory
@@ -27,6 +34,7 @@ zle -N down-line-or-beginning-search
 
 # Colors
 autoload -Uz colors && colors
+
 # colors for ls
 if [[ -f ~/.dir_colors ]] ; then
     eval $(dircolors -b ~/.dir_colors)
@@ -80,9 +88,4 @@ compinit
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 # bindkey '^e' edit-command-line
-
-# Environment variables set everywhere
-export EDITOR="nvim"
-export TERMINAL="urxvt"
-export BROWSER="google-chrome-stable"
 

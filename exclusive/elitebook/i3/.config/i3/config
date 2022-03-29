@@ -30,6 +30,8 @@ bindsym $mod+Shift+s [title="video0 - mpv"] scratchpad show
 ## Sticky ##
 bindsym $mod+w sticky toggle
 
+bindsym $mod+Shift+Ctrl+b border pixel 0
+
 ### X resources ###
 
 # Load configuration from .Xresource

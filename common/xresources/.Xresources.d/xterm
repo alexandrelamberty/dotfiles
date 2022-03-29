@@ -6,13 +6,10 @@ XTerm*RightScrollBar: false
 XTerm*internalBorder: 5
 xterm*Thickness: 0 
 XTerm*cursorBlink: true
-
 XTerm*highlightSelection: true
 XTerm*trimSelection: true
 XTerm*selectToClipboard: false 
-
 XTerm*fullscreen: never
-
 !! Translations
 XTerm.VT100.translations: #override \
 Meta <Key> minus: smaller-vt-font() \n\

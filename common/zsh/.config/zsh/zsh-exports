@@ -4,6 +4,12 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
+
+# Environment variables
+export EDITOR="nvim"
+export BROWSER="google-chrome-stable"
+
+# Paths
 export PATH="$HOME/.local/bin/scripts":$PATH
 export PATH="$HOME/.local/bin":$PATH
 export MANPAGER='nvim +Man!'
@@ -14,5 +20,6 @@ export PATH=$HOME/.local/share/go/bin:$PATH
 export GOPATH=$HOME/.local/share/go
 export PATH=$HOME/.fnm:$PATH
 export PATH=$HOME/.config/nvcode/utils/bin:$PATH
-# Get color support for 'less'
-export LESS="--RAW-CONTROL-CHARS"
+export LESS="--RAW-CONTROL-CHARS" # Get color support for 'less'
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
