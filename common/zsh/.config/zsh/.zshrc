@@ -75,6 +75,20 @@ bindkey -r "^u"
 bindkey -r "^d"
 
 # FZF 
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == */home/eevos/.local/share/nvim/site/pack/packer/start/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/home/eevos/.local/share/nvim/site/pack/packer/start/fzf/bin"
+fi
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/home/eevos/.local/share/nvim/site/pack/packer/start/fzf/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+# source "/home/eevos/.local/share/nvim/site/pack/packer/start/fzf/shell/key-bindings.zsh"
+
 # TODO update for mac
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
