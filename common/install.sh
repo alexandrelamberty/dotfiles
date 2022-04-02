@@ -62,7 +62,7 @@ if [[ -d "$HOME/.config/nitrogen" ]]; then
 fi
 
 # pacman
-sudo ln -sfn "$PWD/pacman/pacman.conf" "/etc/pacman.conf"
+sudo ln -sfn "$PWD/pacman/.pacman.conf" "/etc/pacman.conf"
 
 # picom
 [[ -d "$HOME/.config/picom" ]] || mkdir -p "$HOME/.config/picom"

@@ -60,8 +60,8 @@ tray-padding = 0
 [bar/bottom]
 inherit = section/base
 bottom = true
-modules-left =  eth wlan networkspeeddown networkspeedup localeip   
-modules-center = pacman kernel
+modules-left =  eth wlan networkspeeddown networkspeedup localeip pacman 
+modules-center =  kernel
 modules-right = docker nodejs services filesystem memory cpu temperature battery
 
 [module/system-usb-udev]

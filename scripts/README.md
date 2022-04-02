@@ -1,7 +1,8 @@
 # Scripts
 
-Most of theses scripts are generic, some require specific softwares. Some other
-require a little tweak depending on the hardware they run.
+Most of theses scripts are generic, some require specific software. Some other
+require a little tweak depending on the hardware of the operating system they
+run on.
 
 I don't want to start splitting theses scripts!
 
