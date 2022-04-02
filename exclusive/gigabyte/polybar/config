@@ -32,6 +32,9 @@ memory=
 network-wired=
 wifi=
 
+[hardware]
+wlan=wlp0s26u1u5
+
 [section/base]
 width = 100%
 height = 26 
@@ -51,18 +54,18 @@ tray-scale = 1
 
 [bar/top]
 inherit = section/base
-modules-left =  powermenu i3 
-modules-center = xwindow
-modules-right = docker pacman mutt alsa date  
+modules-left =  powermenu i3 xwindow
+modules-center = 
+modules-right =   mutt alsa date  
 tray-position = right
 tray-padding = 0 
 
 [bar/bottom]
 inherit = section/base
 bottom = true
-modules-left =  eth wlan networkspeeddown networkspeedup localeip
+modules-left =  wlan networkspeeddown networkspeedup localeip pacman
 modules-center = screencasting webcam 
-modules-right = services filesystem memory cpu temperature battery
+modules-right = docker services filesystem memory cpu temperature battery
 
 [module/system-usb-udev]
 type = custom/script
@@ -238,7 +241,7 @@ format-prefix-padding-right = 2
 
 [module/wlan]
 type = internal/network
-interface = wlo1
+interface = wlp0s26u1u5
 interval = 3.0
 ping-interval = 10
 label-connected =  %{A1:wicd-client -n:} %essid% %{A}
@@ -255,7 +258,7 @@ ramp-signal-5 = 說
 
 [module/eth]
 type = internal/network
-interface = enp0s25
+interface = wlp0s26u1u5 
 interval = 3.0
 format-connected-prefix = 
 format-connected-prefix-foreground = ${colors.primary}
@@ -267,18 +270,18 @@ label-disconnected-foreground = ${colors.primary}
 
 [module/localeip]
 type = internal/network
-interface = wlo1
+interface = wlp0s26u1u5 
 label-connected =   %local_ip%
 
 [module/networkspeedup]
 type = internal/network
-interface = wlo1
+interface = wlp0s26u1u5
 label-connected = "%upspeed:7%"
 label-connected-foreground = #dc322f
 
 [module/networkspeeddown]
 type = internal/network
-interface = wlo1
+interface = wlp0s26u1u5 
 label-connected = "%downspeed:7%"
 label-connected-foreground = #2aa198
 
