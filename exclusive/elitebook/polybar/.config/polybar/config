@@ -18,6 +18,7 @@ secondary = ${xrdb:color3}
 alert = ${xrdb:color1} 
 
 [icons]
+tmux = 
 battery-empty=
 battery-full=
 battery-half=
@@ -43,7 +44,8 @@ module-margin-right = 1
 background = ${colors.background}
 foreground = ${colors.foreground}
 font-0 = Terminus:pixelsize=12;2
-font-1 = Terminess TTF Nerd Font:pixelsize=10;3
+; font-1 = Terminess TTF Nerd Font:pixelsize=10;3
+font-1 = SauceCode Pro Nerd Font:style:Bold:size=11;3
 cursor-click = pointer
 cursor-scroll = ns-resize
 enable-ipc = true
@@ -52,7 +54,7 @@ tray-scale = 1
 [bar/top]
 inherit = section/base
 modules-left =   powermenu i3 xwindow
-modules-center =   
+modules-center =    
 modules-right = screencasting webcam alsa date  
 tray-position = right
 tray-padding = 0 
@@ -61,8 +63,8 @@ tray-padding = 0
 inherit = section/base
 bottom = true
 modules-left =  eth wlan networkspeeddown networkspeedup localeip pacman 
-modules-center =  kernel
-modules-right = docker nodejs services filesystem memory cpu temperature battery
+modules-center =  
+modules-right = tmux docker nodejs services filesystem memory cpu temperature battery
 
 [module/system-usb-udev]
 type = custom/script
@@ -73,29 +75,37 @@ click-right = ~/.local/bin/scripts/system-usb-udev --unmount &
 
 [module/tmux]
 type = custom/script
+format-prefix = "  "
+format-prefix-foreground = #008000
 format = <label>
-label =   %output%
+label =    %output%
 exec = ~/.config/polybar/scripts/tmux_session.sh   
 interval = 3600
 
 [module/docker]
 type = custom/script
+format-prefix = "  "
+format-prefix-foreground = #094f94
 format = <label>
-label =   %output%
+label = %output%
 exec = ~/.local/bin/scripts/docker_ps   
 interval = 3600
 
 [module/kernel]
 type = custom/script
 format = <label>
-label =   %output%
+format-prefix = "  "
+format-prefix-foreground = ${colors.primary}
+label = %output%
 exec = ~/.config/polybar/scripts/kernel.sh
 interval = 3600
 
 [module/nodejs]
 type = custom/script
 format = <label>
-label =   %output%
+format-prefix = "  "
+format-prefix-foreground = #065535
+label = %output%
 exec = ~/.config/polybar/scripts/node_process.sh
 interval = 3600
 
