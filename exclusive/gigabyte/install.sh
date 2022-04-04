@@ -8,10 +8,10 @@
 echo "Installing i3, Polybar and Xinit config for Gigabyte Z77X-D3H"
 
 # i3
-stow -t ~/ -S i3
+stow -t ~ i3
 
 # Polybar
-stow -t ~/ -S polybar 
+stow -t ~ polybar 
 
 # Xinit
-stow -t ~/ -S xinit 
+stow -t ~ xinit 

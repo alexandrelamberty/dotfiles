@@ -1,8 +1,14 @@
-selected=$(systemctl list-unit-files --no-pager --type=service --no-legend | dmenu -l 10 | awk '{print $1;}')
-
+#!/usr/bin/bash
+# Dmenu System Services
+prompt="-p System Services:"
+height="-h 26"
+lines="-l 10"
+font="-fn Terminus:pixelsize=12"
+colors="-nb #090B10 -nf #9899a0 -sb #090B10 -sf #fabd2f"
+params=$height $lines $font $colors
+selected=$(systemctl list-unit-files --no-pager --type=service --no-legend | dmenu $prompt $height $lines $font $colors | awk '{print $1;}')
 selected=$(echo $selected | awk '{print $1;}')
-
-action=$(echo -e "start\nstop\nrestart" | dmenu)
+action=$(echo -e "start\nstop\nrestart" | dmenu $height $lines $font )
 
 case "$action" in
     "start")
