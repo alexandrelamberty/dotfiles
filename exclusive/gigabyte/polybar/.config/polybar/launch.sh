@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# ~/.config/polybar/launch.sh
+# Polybar launch script used by the window manager
 
 # Terminate already running bar instances
 killall -q polybar
@@ -10,6 +12,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 #	MONITOR=$m polybar --reload top -c ~/.config/polybar/config & 
 #	MONITOR=$m polybar --reload bottom -c ~/.config/polybar/config & 
 #one
+# Reaload bar instances
 polybar --reload top -c ~/.config/polybar/config & 
 polybar --reload bottom -c ~/.config/polybar/config &
 
