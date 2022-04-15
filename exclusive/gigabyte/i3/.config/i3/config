@@ -54,7 +54,7 @@ set_from_resource $white color7 #000000
 
 #133b5c #133b5c 
 # class                 border  bground text     indicator child_border
-client.focused          #090B10 #090B10 #ffcdab7 magenta   #8ab3b5
+client.focused          #090B10 #090B10 #ffcdab7 #cb6077   #8ab3b5
 client.focused_inactive #090B10 #090B10 #884E50  #cb6077
 client.unfocused        #090B10	#090B10 #884E50 #292D2E   #323845 
 client.urgent           #090B10 #090B10 #884E50 #900000   #900000
@@ -145,7 +145,7 @@ bindsym $mod+Return exec xterm
 bindsym $mod+Shift+a kill
 
 # show dmenu !!! ADD PATCH TO HEIGHT -h parameters
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'xos4 Terminus:pixelsize=12'
+bindsym $mod+d exec --no-startup-id ~/.local/bin/dmenu-wrapper/dmenu-menu.sh
 
 # change focus
 bindsym $mod+j focus left
@@ -245,22 +245,23 @@ bindsym $mod+r mode "resize"
 
 ### Executions ###
 
+# xrandr screen configuration
 exec_always --no-startup-id $HOME/.screenlayout/layout-4-screens.sh & 
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh & # Status bar
+exec --no-startup-id nitrogen --restore & # Wallpaper
+exec --no-startup-id dunst & # Notification
+# exec --no-startup-id picom -b & # Compositor
+exec --no-startup-id unclutter # Mouse icon
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh & 
-exec --no-startup-id nitrogen --restore &
-exec --no-startup-id dunst &
-exec --no-startup-id picom -b &
-exec --no-startup-id unclutter
 ### Modes ###
 
 # Apps mode
 
-bindsym $mod+Shift+o mode "$mode_apps"
+bindsym $mod+Shift+b mode "$mode_apps"
 set $mode_apps Launch: [c]chromium [v]vim [r]ranger [s]surf
 mode "$mode_apps" {
       bindsym c exec chromium;  exec --no-startup-id xdotool key "Escape"
@@ -283,7 +284,7 @@ smart_gaps on
 smart_borders on
 
 # Set inner/outer gaps
-gaps inner 10 
+gaps inner 0 
 gaps outer 0
 
 # Gaps mode

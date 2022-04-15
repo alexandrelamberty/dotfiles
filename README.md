@@ -1,4 +1,4 @@
-# Dotfiles
+e Dotfles
 
 ![Screenshot](./screenshot_08-04-21-17:35:54.png)
 
@@ -12,9 +12,17 @@ specific configuration, computers.
 - [ ] Clean fonts, add wallpapers, icons and sounds
 - [ ] Check for security issues, mutt and others need credential
 
-## Base
+## Base tools
 
-These are the sofwares I use and their configuration file(s) if there are.
+### Zsh
+
+### Tmux
+
+### Neovim
+
+## Additional software
+
+Sofwares I use and their configuration file(s) if there are.
 
 - Alacritty (Terminal emulator)
 - Alsa (Advanced Linux Sound Architecture)
@@ -69,7 +77,7 @@ These are the sofwares I use and their configuration file(s) if there are.
 - Xrdb (Xresource database manager)
 - Xscreensaver
 - Zathura (PDF viewer)
-- Zsh (I don't really use this)
+- Zsh 
 
 ## Windows Manager ans Status bars
 
