@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+# TODO: Check if we resolved this with udev rule 
 #eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME gnome-session)/environ)";
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 #TODO: Move to ~/.locale./share/sounds

@@ -19,7 +19,6 @@ export PATH=$HOME/.emacs.d/bin:$PATH
 export PATH=$HOME/.local/share/go/bin:$PATH
 export GOPATH=$HOME/.local/share/go
 export PATH=$HOME/.fnm:$PATH
-export PATH=$HOME/.config/nvcode/utils/bin:$PATH
 export LESS="--RAW-CONTROL-CHARS" # Get color support for 'less'
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

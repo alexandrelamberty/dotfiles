@@ -1,6 +1,0 @@
-#!/bin/bash
-# Create a screenshot with scrot
-# 
-dir=~/pictures/
-fn=screenshot_$(date +'%d-%m-%y-%H:%M:%S').png
-scrot $dir$fn 

@@ -1,0 +1,2 @@
+#!/bin/bash
+i3-msg floating enable, resize set 1150 px 660 px, move position 70 px 70 px

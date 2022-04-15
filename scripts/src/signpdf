@@ -5,7 +5,7 @@
 
 # signpdf -document Doc.pdf -offset "-10cm -10cm" -page 1 -n Doc_signed.pdf
 
-signature=~/documents/signature.pdf
+signature=~/documents/signature/signature.pdf
 suffix='_signed'
 
 echo "Signing your document..."
@@ -23,7 +23,7 @@ done
 
 # Create the template signature page
 echo "- Creating template..."
-pdfjam --paper 'a4paper' --scale 0.3 --offset '+3cm -11cm' --outfile _stamp.pdf $signature > /dev/null 2>&1
+pdfjam --paper 'a4paper' --scale 0.3 --offset '-4cm +8cm' --outfile _stamp.pdf $signature > /dev/null 2>&1
 
 # Create blank A4 page
 echo "- Creating blank pages..."
@@ -31,7 +31,8 @@ convert xc:none -page A4 _blank.pdf
 
 # Add the blank page to the template
 echo "- Finishing template..."
-pdftk A=_stamp.pdf B=_blank.pdf cat B1 A1 output _multistamp.pdf
+# pdftk A=_stamp.pdf B=_blank.pdf cat B1 A1 output _multistamp.pdf
+pdftk A=_stamp.pdf cat A1 output _multistamp.pdf
 
 # Join the original document with the template
 echo "- Joining documents..."
@@ -39,7 +40,7 @@ filename="${DOCUMENT%.*}"
 pdftk $DOCUMENT multistamp _multistamp.pdf output $filename"_signed.pdf"
 
 echo "Removing temp files..."
-rm "_blank.pdf"
-rm "_stamp.pdf"
-rm "_multistamp.pdf"
+# rm "_blank.pdf"
+# rm "_stamp.pdf"
+# rm "_multistamp.pdf"
 echo "Document signed. Have a good day."

@@ -1,0 +1,7 @@
+#!/bin/bash
+# Open the remote origin of a Git repository
+if [ -d ".git" ]; then
+  remote=$(git remote -v)
+  echo $remote
+fi
+

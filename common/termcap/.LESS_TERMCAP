@@ -1,5 +1,7 @@
-# foregrounds
+# ~/.LESS_TERMCAP
+# 
 
+# Colors
 export black=$'\033[30m'
 export red=$'\033[31m'
 export green=$'\033[32m'
@@ -8,9 +10,6 @@ export blue=$'\033[34m'
 export magenta=$'\033[35m'
 export cyan=$'\033[36m'
 export white=$'\033[37m'
-
-
-# Here's your colored man pages right here.
 
 export LESS_TERMCAP_mb=$magen
 export LESS_TERMCAP_md=$yellow

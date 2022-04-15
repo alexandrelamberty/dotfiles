@@ -1,28 +1,37 @@
 #!/bin/sh
 
-# Personal
+# IKBS ------------------------------------------------------------------------
+
+alias logs='nvim $HOME/logs/README.md'
 alias ideas='nvim ./ideas/README.md'
-alias todos='nvim ./todos/README.md'
 alias topics='nvim ./topics/README.md'
+alias todos='nvim ./todos/README.md'
 
-# wifi
-alias whome="nmcli dev wifi connect WiFi-2.4-62E0 password c6RC9zk3aR2P "
+# Software configurations
 
-# Zsh
-alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
-
-# Config
+alias i3rc='nvim ~/.config/i3/'
 alias nvimrc='nvim ~/.config/nvim/'
-alias zshrc='nvim ~/.config/zsh/'
+alias polybarrc='nvim ~/.config/polybar/'
 alias tmuxrc='nvim ~/.tmux.conf'
+alias zshrc='nvim ~/.config/zsh/'
 
 # Nvim
-alias nv='nvim'
-alias nvi='nvim ./'
+alias nv='nvim .'
 
-# Tmux see: stdin, pipe ...
+# Tmux attach session
 alias tas='tmux attach-session -t $(tmux ls | sed -E "s/:.*$//" | fzf --reverse --height 40%)'
+
+# Tmux kill Session
 alias tks='tmux kill-session -t $(tmux ls | sed -E "s/:.*$//" | fzf --reverse --height 40%)'
+
+# Docker Aliases
+
+# Docker Kill All Containers
+alias dkac='docker kill $(docker ps -q)'
+# Docker Remove All Containers
+alias drac='docker rm $(docker ps -a -q)'
+# Docker Remove All Images
+alias drai='docker kill $(docker ps -q)'
 
 # Pacman
 alias pu="sudo pacman -Syu"
@@ -38,17 +47,29 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+
+# Dmenu default 
+alias dmenu="dmenu -l 10 -fn Terminus:pixelsize=12 -h 26 -nb '#090B10'  -nf '#9899a0' -sb '#090B10' -sf '#fabd2f'"
+
+# File system -----------------------------------------------------------------
+
+alias ls='ls --color=auto --group-directories-first'
+alias ll='ls -1 --group-directories-first'
+alias la='ls -a'
+alias tr='tree -L 2 --dirsfirst'
 # confirm before overwriting something
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
-# ls
-alias ls='ls --color=auto'
-alias ll='ls -1'
-# easier to read disk
+# Disks ----------------------------------------------------------------------
+
 alias df='df -h'     # human-readable sizes
 alias free='free -m' # show sizes in MB
+
+# Processes -------------------------------------------------------------------
 
 # get top process eating memory
 alias psmem='ps auxf | sort -nr -k 4 | head -5'
@@ -56,22 +77,31 @@ alias psmem='ps auxf | sort -nr -k 4 | head -5'
 # get top process eating cpu ##
 alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-
 # systemd
 alias xsystemctl="systemctl list-unit-files --state=enabled"
 
-# git
-alias m="git checkout master"
-alias s="git checkout stable"
-alias gitup="git add . && git commit -m 'up' && git push"
+# Git -------------------------------------------------------------------------
 
-# stow
+alias gcm="git checkout master"
+alias gup="git add . && git commit -m 'up' && git push"
+
+# Stow the passed package name
 stowth() {
 	stow -vSt ~ $1
 }
 
+# Unstow the passed package name
 unstow() {
 	stow -vDt ~ $1
 }
+
+# Users
+alias users="cat /etc/passwd | awk -F: '{print $1 "," $2}' | column -s, -t | fzf"
+
+# wifi
+alias whome="nmcli dev wifi connect WiFi-2.4-62E0 password c6RC9zk3aR2P "
+
+# Zsh
+alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e \
+'{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+

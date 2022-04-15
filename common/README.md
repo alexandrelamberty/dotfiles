@@ -1,31 +1,37 @@
 # Common user-level configuration dotfile
 
-I use stow
+## Requirements
 
+[Stow]()
+
+## Installation
+
+TODO: Check if the file exist to replace it with stow! There and error I think
 Simulate the installation of zsh
-
 ```bash
 stow -nvSt ~ zsh
 ```
 
-Install zsh
-
+Install ls zsh tmux git neovim
 ```bash
 stow -vSt ~ zsh
 ```
 
+## Software 
+
 - Alacritty
 - Alsa
 - Bash
-- Dmenu
 - Dunst
+- Git
 - Irssi
 - Mpv
-- Muttw
+- Mutt
 - Newsboat
 - Nitrogen
 - Pacman
 - Picom
+- Qutebrowser
 - Ranger
 - Screenkey
 - Tmux

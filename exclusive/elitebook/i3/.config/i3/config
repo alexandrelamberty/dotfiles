@@ -126,6 +126,9 @@ bindsym $mod+Shift+a kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id ~/.local/bin/dmenu-wrapper/dmenu-menu.sh
 
+# Zen mode
+bindsym $mod+Shift+z exec i3-center-window
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down

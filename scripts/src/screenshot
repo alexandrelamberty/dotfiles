@@ -1,0 +1,6 @@
+#!/bin/bash
+# Take a screenshot with scrot
+dir=~/pictures/
+format=+'%d-%m-%y-%H:%M:%S'
+fn=screenshot_"$format".png
+scrot $dir$fn 

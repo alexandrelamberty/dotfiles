@@ -1,7 +1,0 @@
-# vim:ft=bash
-# Script that open the github reposotiry of a git directory
-if [ -d ".git" ]; then
-  remote=$(git remote -v)
-  echo $remote
-fi
-

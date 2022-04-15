@@ -1,6 +1,6 @@
 # ~/.newsboat/config
 include ~/.newsboat/colors
-
+include /usr/share/doc/newsboat/contrib/colorschemes/inkpot
 auto-reload yes
 browser "xdg-open %u"
 
@@ -33,6 +33,38 @@ color info               default   black
 color article            default   default
 
 # highlights
+
+articlelist-format "%4i %f %D %?T?|%-17T| ?%t"
+ 
+highlight feedlist "^ *[0-9]+ *N " color15 color0
+highlight articlelist "^ *[0-9]+ *N " color15 color0
+
 highlight article "^(Title):.*$" blue default
 highlight article "https?://[^ ]+" red default
-highlight article "\\[image\\ [0-9]+\\]" green default
+highlight article "\\[image\\ [0-9]+\\]" green default 
+highlight article "^(Feed|Title|Author|Link|Date|Linux):.*" color75 default
+highlight article "^Podcast Download URL:.*" color71 default
+highlight article "^Links:" white color0 underline
+highlight article "\\[[0-9][0-9]*\\]" color72 default bold
+highlight article "\\[image [0-9][0-9]*\\]" color72 default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" color72 default bold
+highlight article ":.*\\(link\\)$" color74 default
+highlight article ":.*\\(image\\)$" color74 default
+highlight article ":.*\\(embedded flash\\)$" color74 default
+ 
+color listnormal color208 color234
+color listnormal_unread color244 color234 
+color listfocus   color15 color0 blink
+color info  red default bold
+color listfocus_unread color166 color0 bold
+color info color38 color235
+color background color15 color0
+color article color15 color0 
+
+feedlist-format "%-65t %?d?- %-65d&? %> %u"
+articlelist-format "%-4i %f %t"
+feedlist-title-format "%N %V %> %u feeds with new articles"
+articlelist-title-format "%T"
+html-renderer "w3m -dump -T text/HTML -cols 100"
+highlight article "^(Feed|Title|Author|Link|Date):.*" color0 default 
+notify-format  "%I %d %n %f new articles (%n unread articles, %f unread feeds)"
