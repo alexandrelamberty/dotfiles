@@ -9,16 +9,17 @@ SAVEHIST=1000000
 export EDITOR="nvim"
 export BROWSER="google-chrome-stable"
 
-# Paths
-export PATH="$HOME/.local/bin/scripts":$PATH
-export PATH="$HOME/.local/bin":$PATH
-export MANPAGER='nvim +Man!'
 export MANWIDTH=999
+export MANPAGER='nvim +Man!'
+export LESS="--RAW-CONTROL-CHARS" # Get color support for 'less'
+
+# Paths
+export PATH="$HOME/.local/bin":$PATH
+export PATH="$HOME/.local/share/bin/":$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.emacs.d/bin:$PATH
 export PATH=$HOME/.local/share/go/bin:$PATH
 export GOPATH=$HOME/.local/share/go
-export PATH=$HOME/.fnm:$PATH
-export LESS="--RAW-CONTROL-CHARS" # Get color support for 'less'
+export PATH=$HOME/.fnm:$PATH # TODO: Check what it is
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
