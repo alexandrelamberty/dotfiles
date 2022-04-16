@@ -1,6 +1,6 @@
 Dotfles
 
-![Screenshot](./readme/screenshot_08-04-21-17:35:54.png)
+![Screenshot](./.readme/screenshot_08-04-21-17:35:54.png)
 
 > No true anymore
 The dotfiles are split into 2 categories, `common` and `exclusive`. The
