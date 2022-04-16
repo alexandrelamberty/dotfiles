@@ -34,7 +34,7 @@ See `pacman-packages.txt` to view all the required required packages.
 
 ## Architecture
 
-The configuration is split in tree main directory: 
+The configuration is split in three main directory: 
 
 - `config` contains all the programs configuration files. They mostly in
 	`XDG_CONFIG_HOME` or `HOME`.
