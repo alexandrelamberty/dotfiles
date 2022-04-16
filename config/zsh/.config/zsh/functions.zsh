@@ -1,4 +1,4 @@
-
+#!/bin/sh
 
 # Function to source files if they exist
 function zsh_add_file() {

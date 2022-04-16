@@ -15,16 +15,11 @@ alias polybarrc='nvim ~/.config/polybar/'
 alias tmuxrc='nvim ~/.tmux.conf'
 alias zshrc='nvim ~/.config/zsh/'
 
-# Nvim
-alias nv='nvim .'
+# Dmenu -----------------------------------------------------------------------
 
-# Tmux attach session
-alias tas='tmux attach-session -t $(tmux ls | sed -E "s/:.*$//" | fzf --reverse --height 40%)'
+alias dmenu="dmenu -l 10 -fn Terminus:pixelsize=12 -h 26 -nb '#090B10'  -nf '#9899a0' -sb '#090B10' -sf '#fabd2f'"
 
-# Tmux kill Session
-alias tks='tmux kill-session -t $(tmux ls | sed -E "s/:.*$//" | fzf --reverse --height 40%)'
-
-# Docker Aliases
+# Docker ----------------------------------------------------------------------
 
 # Docker Kill All Containers
 alias dkac='docker kill $(docker ps -q)'
@@ -33,32 +28,42 @@ alias drac='docker rm $(docker ps -a -q)'
 # Docker Remove All Images
 alias drai='docker kill $(docker ps -q)'
 
-# Pacman
+# Nvim -------------------------------------------------------------------------
+
+alias nv='nvim .'
+
+# Pacman ----------------------------------------------------------------------
+
 alias pu="sudo pacman -Syu"
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+alias pmirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias pmirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias pmirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias pmirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 # For when keys break
-alias archlinx-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
+alias p-fix-keys="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
 
-# Colorize grep output (good for log files)
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+# Tmux -------------------------------------------------------------------------
 
+# Tmux attach session
+alias tas='tmux attach-session -t $(tmux ls | sed -E "s/:.*$//" | fzf --reverse --height 40%)'
+# Tmux kill Session
+alias tks='tmux kill-session -t $(tmux ls | sed -E "s/:.*$//" | fzf --reverse --height 40%)'
 
-# Dmenu default 
-alias dmenu="dmenu -l 10 -fn Terminus:pixelsize=12 -h 26 -nb '#090B10'  -nf '#9899a0' -sb '#090B10' -sf '#fabd2f'"
+# Zsh --------------------------------------------------------------------------
+
+alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e \
+'{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
 # File system -----------------------------------------------------------------
-
-alias ls='ls --color=auto --group-directories-first'
+alias log='sudo tail -f'
+alias ls='ls --color=tty --group-directories-first'
 alias ll='ls -1 --group-directories-first'
 alias la='ls -a'
 alias tr='tree -L 2 --dirsfirst'
-# confirm before overwriting something
 alias cp="cp -i"
+alias grep='grep --color=auto'
+alias grepe='egrep --color=auto'
+alias grepf='fgrep --color=auto'
 alias mv='mv -i'
 alias rm='rm -i'
 # Recursively delete `.DS_Store` files
@@ -78,7 +83,7 @@ alias psmem='ps auxf | sort -nr -k 4 | head -5'
 alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 
 # systemd
-alias xsystemctl="systemctl list-unit-files --state=enabled"
+alias stle="systemctl list-unit-files --state=enabled"
 
 # Git -------------------------------------------------------------------------
 
@@ -98,10 +103,6 @@ unstow() {
 # Users
 alias users="cat /etc/passwd | awk -F: '{print $1 "," $2}' | column -s, -t | fzf"
 
-# wifi
+# Wifi
 alias whome="nmcli dev wifi connect WiFi-2.4-62E0 password c6RC9zk3aR2P "
-
-# Zsh
-alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e \
-'{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
