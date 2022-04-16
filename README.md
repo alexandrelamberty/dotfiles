@@ -2,11 +2,6 @@ Dotfles
 
 ![Screenshot](./.readme/screenshot_08-04-21-17:35:54.png)
 
-> No true anymore
-The dotfiles are split into 2 categories, `common` and `exclusive`. The
-`common` are shared across multiple installation and the `exclusive` are for
-specific configuration, computers.
-
 ## TODO
 
 - [ ] Split this configuration into git branches? 
@@ -16,82 +11,87 @@ specific configuration, computers.
 
 ## Requirements
 
-> This configuration is based to run on an Arch Linux operating system.
-
-You will need to have Pacman installed on your system.
-See ´pacman-packages.txt´ used by the ´install.sh´ scripts to install the
-listed pacman packages.
+> This configuration is based to run on an [Arch Linux]() operating system.
 
 ## Installation
 
-Run the ´install.sh´ script.
-´´´bash
-./install.sh
-´´´
+Check and run the `install.sh` script.
+
+```
+./install.sh 
+```
+
+See `pacman-packages.txt` to view all the required required packages.
 
 ## Configuration
 
+- i3
+	Configure workspaces and monitors `~/.config/i3/config` 
+	> FIXME: Workspaces configuration include not working!
+
+- Polybar
+	Configure system paths and hardware `~/.config/polybar/hardware.ini`
 
 ## Architecture
 
+The configuration is split in tree main directory: 
 
-## Base tools
+- `config` contains all the programs configuration files. They mostly in
+	`XDG_CONFIG_HOME` or `HOME`.
+- `data` contains resources like: dictionaries, icons, sounds used by programs.
+- `scripts` that contains all the scripts used by my configurations and
+	programs.
 
-### Zsh
+## Configuration
 
-### Tmux
+### Base environment
 
-### Neovim
+* Bash (Shell)
+* Git (Version control)
+* Irssi (IRC client)
+* Mutt (Email client)
+* Neovim (Text editor)
+* Newsboat (News feed client)
+* Pacman (ArchLinux package manager)
+* Ranger (File)
+* Surf (Browser)
+* Sxiv (Image viewer)
+* Tmux (Terminal multiplexing)
+* Urxvt (Terminal emulator)
+* Vim (Text editor)
+* Xterm (Terminal emulator)
+* Zathura (PDF viewer)
+* Zsh (Shell)
 
-## Additional software
+## Graphic environment
 
-Sofwares I use and their configuration file(s) if there are.
+* Dmenu (Menu)
+* Dunst (Notification)
+* GTK (GUIs)
+* Polybar (Status bar)
+* i3 (Window manager)
 
-- Alacritty (Terminal emulator)
+## Utils
+
+* Sc (Spreadsheet calculator)
+* Htop (System monitoring)
 - Alsa (Advanced Linux Sound Architecture)
-- Aseprite (Pixel graphics editor)
-- Bash (Shell)
-- Clang (C, C++)
+- Bat (Cat like)
 - Cloc (Count line of code)
-- Colorpicker
-- Cups (Printer)
-- Curl
-- Dmenu
-- Dunst (Notification)
-- Freerdp
-- FFmpeg
-- Galculator
-- Gimp (Image manipulation program)
-- GIT
-- GTK
-- Htop
-- Iftop
-- Irssi (IRC client)
-- Inkscape (Vector graphics editor)
+- Colorpicker (A color picker! :))
+- Cups (Printer) TODO: Need config
+- FFmpeg (Video tools)
+- Freerdp (Remote desktop)
+- Fzf
 - Jq
-- Kdenlive (Video editing)
-- Mpv
-- Mutt
-- Newsboat
-- Nitrogen
-- Pacman
-- Pandoc
-- Pcmanfm
-- Picom
-- Postman
-- Ranger
-- Remmina
-- Sc (Spreadsheet calculator)
-- Screenkey
+- Mpv (Video player)
+- Nitrogen (Desktop background)
+- Nmcli (Network manager)
+- Pandoc (Markup converter)
+- Pcmanfm (File manager)
+- Screenkey (On-Screen Keyboard)
 - Scrot (Screenshot)
-- Surf (Browser)
-- Sxiv (Image viewer)
-- Tmux (Terminal multiplexing)
-- Urxvt (Terminal emulator)
 - Ueberzug (Image preview, I use it for Ranger)
-- Vim (Text editor)
-- VScode (Source code editor)
-- Weechat (IRC client)
 - Xdotool (X11 automation; keyboard, mouse, windows)
 - Xev (X events)
 - Xinit
@@ -99,32 +99,46 @@ Sofwares I use and their configuration file(s) if there are.
 - Xprop (Window and font properties in an X server)
 - Xrdb (Xresource database manager)
 - Xscreensaver
-- Zathura (PDF viewer)
-- Zsh 
+- Zenity (GTK UIS)
 
-## Windows Manager ans Status bars
+## Additional software
 
-- i3
-- Polybar
+- Aseprite (Pixel graphics editor)
+- Galculator (Calculator)
+- Gimp (Image manipulation program)
+- Inkscape (Vector graphics editor)
+- Kdenlive (Video editing)
+- Postman (API testing)
+- Remmina (Remote desktop)
+- VScode (Source code editor)
 
 ## Programming
 
+See Neogit
+
 - Android SDK
+- Clang (C, C++)
 - Composer
 - Dart
 - Docker
 - Flutter
-- Ruby
 - GO
-- Yarn
 - NPM
 - Perl
+- Ruby
+- Yarn
 
-## Resource
+## Data
 
-Theses resources are needed by some of my configurations files.
+Data and media used by the programs and configurations.
+
+### Dict
+
+The spelling dictionaries I use in Neovim or Vim.
 
 ### Fonts
+
+Fonts used by my configuration
 
 `~/.local/share/fonts/`
 
@@ -134,6 +148,8 @@ The icons are mainly and only at the moment used for the notification system
 [Dunst](https://github.com/dunst-project/dunst)
 
 `~/.local/share/icons/`
+
+### Mime
 
 ### Sounds
 

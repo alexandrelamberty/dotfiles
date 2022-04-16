@@ -16,8 +16,6 @@ Window manager configuration
 
 ### Launcher
 
-
-
 ### Navigation
 
 ### Modes
