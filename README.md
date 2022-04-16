@@ -1,7 +1,8 @@
-e Dotfles
+Dotfles
 
 ![Screenshot](./screenshot_08-04-21-17:35:54.png)
 
+> No true anymore
 The dotfiles are split into 2 categories, `common` and `exclusive`. The
 `common` are shared across multiple installation and the `exclusive` are for
 specific configuration, computers.
@@ -9,8 +10,30 @@ specific configuration, computers.
 ## TODO
 
 - [ ] Split this configuration into git branches? 
+- [ ] Refactor installation from Stow to custom?
 - [ ] Clean fonts, add wallpapers, icons and sounds
 - [ ] Check for security issues, mutt and others need credential
+
+## Requirements
+
+> This configuration is based to run on an Arch Linux operating system.
+
+You will need to have Pacman installed on your system.
+See ´pacman-packages.txt´ used by the ´install.sh´ scripts to install the
+listed pacman packages.
+
+## Installation
+
+Run the ´install.sh´ script.
+´´´bash
+./install.sh
+´´´
+
+## Configuration
+
+
+## Architecture
+
 
 ## Base tools
 
@@ -123,3 +146,5 @@ The icons are mainly and only at the moment used for the notification system
 ## References
 
 - [XDG Base Directory](https://wiki.archlinux.org/title/XDG_Base_Directory)
+- <https://wiki.archlinux.org/title/XDG_user_directories>
+- <https://www.freedesktop.org/wiki/Specifications/>

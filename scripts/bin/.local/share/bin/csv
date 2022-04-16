@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+# CSV formating   
+# TODO: to test ...
+column -s, -t < "$*" | less -#2 -N -S

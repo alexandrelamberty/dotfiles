@@ -1,0 +1,28 @@
+# ~/.config/i3/
+
+# Setting leader key
+
+set $mod Mod4
+
+# Setting workspaces variables
+
+set $ws1 "1: term"
+set $ws2 "2: coding"
+set $ws3 "3: web"
+set $ws4 "4: mail"
+set $ws5 "5: calendar"
+set $ws6 "6: feed"
+set $ws7 "7: 7"
+set $ws8 "8: 8"
+set $ws9 "9: 9"
+set $ws0 "10: 10"
+
+include $HOME/.config/i3/keybinds.conf
+include $HOME/.config/i3/workspaces.conf
+include $HOME/.config/i3/colors.conf
+include $HOME/.config/i3/gaps.conf
+include $HOME/.config/i3/modes.conf
+# include $HOME/.config/i3/monitors.conf
+include $HOME/.config/i3/windows.conf
+include $HOME/.config/i3/exec.conf
+

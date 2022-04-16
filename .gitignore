@@ -1,2 +1,5 @@
-common/mutt/accounts/*
+# Dotfiles Gitignore file
+
+# Exclude all content for Mutt accounts except the tempale
+*/mutt/accounts/*
 !username@gmail.com

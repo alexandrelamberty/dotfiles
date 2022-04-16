@@ -1,0 +1,16 @@
+# $XDG_CONFIG_HOME/git/config
+
+[user]
+	email = alexandrelamberty@gmail.com
+	name = Alexandre Lamberty
+[pull]
+	rebase = false
+[init]
+	defaultBranch = master
+[merge]
+	tool = vimdiff
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+
