@@ -1,4 +1,5 @@
 #!/bin/sh
+# ZSH - Prompt
 
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
@@ -25,7 +26,5 @@ zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}[%{$fg[red]%}%m%u%c%{$fg[yellow]
 
 # format our main prompt for hostname current folder, and permissions.
 #PROMPT="%B%{$fg[blue]%}[%{$fg[white]%}%n%{$fg[red]%}@%{$fg[white]%}%m%{$fg[blue]%}] %(?:%{$fg[green]%}➜ :%{$fg[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
-
-PROMPT="%{$fg[cyan]%}%~\$vcs_info_msg_0_ %{$fg[yellow]%}$ %{$reset_color%}"
-
-#prompt="\[\033[0;34m\]\W\$(parse_git_branch)\$(add_venv_info)\[\033[0;33m\] $\[\033[00m\] ";
+PROMPT="%{$fg[cyan]%}%~\$vcs_info_msg_0_ %{$reset_color%}%(?.%{$fg[yellow]%}$ .%{$fg[red]%}$ )%b"
+# PROMPT+="\[\033[0;34m\]\W\$(parse_git_branch)\$(add_venv_info)\[\033[0;33m\] $\[\033[00m\] ";

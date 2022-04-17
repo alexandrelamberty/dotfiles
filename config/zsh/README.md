@@ -4,14 +4,13 @@
 
 [ ] Add plugin manager ? 
 [ ] Completion, fzf ? share with neovim ?
-
-Check TODO and FIXME...
+[ ] Erros prompt sourcing .zshenv vs manual sourcing of exports 
 
 ## Dependencies
 
 ## Structure
 
-
 ## References
 
-- [Zsh](https://notes.alexandrelamberty.com/zsh)
+- <https://zsh.sourceforge.io/Doc/>
+- <https://notes.alexandrelamberty.com/zsh>

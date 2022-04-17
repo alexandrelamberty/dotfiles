@@ -1,4 +1,4 @@
-Dotfles
+Dotfiles
 
 ![Screenshot](./.readme/screenshot_08-04-21-17:35:54.png)
 
@@ -8,6 +8,7 @@ Dotfles
 - [ ] Refactor installation from Stow to custom?
 - [ ] Clean fonts, add wallpapers, icons and sounds
 - [ ] Check for security issues, mutt and others need credential
+- [ ] Document some configurations, bash, neovim ... or refer to notes?
 
 ## Requirements
 
@@ -127,37 +128,45 @@ See Neogit
 - Perl
 - Ruby
 - Yarn
+- SQL sqlite3, sqlitebrowser, sqldiff 
 
 ## Data
 
-Data and media used by the programs and configurations.
+Data and media used by programs and configurations.
 
 ### Dict
 
 The spelling dictionaries I use in Neovim or Vim.
 
+They will be symlinked to `XDG_DATA_HOME/icons`
+
 ### Fonts
 
-Fonts used by my configuration
+Fonts used in Xresources, GTK, i3 and Polybar. 
 
-`~/.local/share/fonts/`
+They will be symlinked to `XDG_DATA_HOME/fonts`
+
+> Updates Xresources references 
+
 
 ### Icons
 
 The icons are mainly and only at the moment used for the notification system
-[Dunst](https://github.com/dunst-project/dunst)
+[Dunst](https://github.com/dunst-project/dunst).
 
-`~/.local/share/icons/`
+They will be symlinked to `XDG_DATA_HOME/icons`
 
 ### Mime
 
+They will be symlinked to `XDG_DATA_HOME/mime`
+
 ### Sounds
 
-`~/.local/share/sounds/`
+They will be symlinked to `XDG_DATA_HOME/sounds`
 
 ### Wallpapers
 
-`~/.local/share/wallpapers/`
+They will be symlinked to `XDG_DATA_HOME/wallpapers`
 
 ## References
 

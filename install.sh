@@ -3,6 +3,7 @@
 
 installPackages() {
   echo "> Installing Pacman packages..."
+	# TODO: implement this
 }
 
 installConfigs() {

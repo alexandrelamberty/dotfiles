@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+# Add package file list in preview – may be a bit slower updating preview
+# window (make sure you run pacman -Fy with root privileges at least once
+# before invocation to sync the pacman file database)
+# https://wiki.archlinux.org/title/fzf
+
+pacman -Slq | fzf --multi --preview 'cat <(pacman -Si {1}) <(pacman -Fl {1} | awk "{print \$2}")' | xargs -ro sudo pacman -S

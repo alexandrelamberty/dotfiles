@@ -1,19 +1,18 @@
-#!/bin/sh
-# ~/.config/zsh/zshrc
-# Zsh configuration file sourced in ~/.zshrc 
+# Zsh Run Commands
+# ~/.config/zsh/.zshrc
 
 # Source functions TODO: Replace with a package manager
 export ZDOTDIR=$HOME/.config/zsh
 source "$ZDOTDIR/functions.zsh"
 
 # TODO: move to zenv ?
-zsh_add_file "exports"
-zsh_add_file "aliases"
-zsh_add_file "settings"
+zsh_add_file "aliases.zsh"
+# zsh_add_file "exports.zsh"
+zsh_add_file "settings.zsh"
 zsh_add_file "completion.zsh"
-zsh_add_file "prompt"
+zsh_add_file "prompt.zsh"
 zsh_add_file "keybinds.zsh"
-zsh_add_file "vim-mode"
+zsh_add_file "vim-mode.zsh"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"

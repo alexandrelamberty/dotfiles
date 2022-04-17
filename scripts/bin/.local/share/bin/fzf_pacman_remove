@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+# List all your installed packages, and then remove selected packages
+# https://wiki.archlinux.org/title/fzf
+
+pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns
