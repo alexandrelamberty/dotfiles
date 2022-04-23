@@ -1,6 +1,7 @@
 # ~/.config/zathura/zathurarc
 # Zathura configuration file
-# See man `man zathurarc'
+
+# Keybinds
 map r reload
 map p print
 map i recolor

@@ -1,4 +1,5 @@
 [Default Applications]
+application/pdf=zathura.desktop;
 x-scheme-handler/postman=Postman.desktop
 x-scheme-handler/rdp=org.remmina.Remmina.desktop
 x-scheme-handler/spice=org.remmina.Remmina.desktop
@@ -26,7 +27,7 @@ x-scheme-handler/mailto=userapp-Thunderbird-A7O4B1.desktop
 message/rfc822=userapp-Thunderbird-A7O4B1.desktop
 x-scheme-handler/mid=userapp-Thunderbird-A7O4B1.desktop
 x-scheme-handler/news=userapp-Thunderbird-DNK5B1.desktop
-x-scheme-handler/snews=userapp-Thunderbird-DNK5B1.desktop
+x-scheme-handler/snews=userapp-Thunderbird-DNK6B1.desktop
 x-scheme-handler/nntp=userapp-Thunderbird-DNK5B1.desktop
 x-scheme-handler/feed=userapp-Thunderbird-ZQB6B1.desktop
 application/rss+xml=userapp-Thunderbird-ZQB6B1.desktop
@@ -37,9 +38,9 @@ application/x-extension-ics=userapp-Thunderbird-6D41B1.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-6D41B1.desktop
 
 [Added Associations]
-application/pdf=chromium.desktop;
+application/pdf=zathura.desktop;
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=chromium.desktop;
-image/png=userapp-sxiv $f-7ZUPW0.desktop;
+image/png=sxiv.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 x-scheme-handler/chrome=firefox.desktop;
@@ -63,3 +64,19 @@ x-scheme-handler/webcals=userapp-Thunderbird-6D41B1.desktop;
 
 [Removed Associations]
 
+[MIME Cache]
+application/x-shellscript=nvim.desktop;
+text/english=nvim.desktop;
+text/plain=nvim.desktop;
+text/x-c=nvim.desktop;
+text/x-c++=nvim.desktop;
+text/x-c++hdr=nvim.desktop;
+text/x-c++src=nvim.desktop;
+text/x-chdr=nvim.desktop;
+text/x-csrc=nvim.desktop;
+text/x-java=nvim.desktop;
+text/x-makefile=nvim.desktop;
+text/x-moc=nvim.desktop;
+text/x-pascal=nvim.desktop;
+text/x-tcl=nvim.desktop;
+text/x-tex=nvim.desktop;

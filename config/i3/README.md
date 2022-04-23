@@ -1,4 +1,4 @@
-# i3
+# i3 configuration
 
 Window manager configuration
 

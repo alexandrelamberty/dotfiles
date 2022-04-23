@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Foobar
+GenericName=Foo bar
+GenericName[fr]=Foo bar
+TryExec=foobar
+Exec=foobar %F
+Terminal=true
+Type=Application
+Keywords=Foo;bar;
+Keywords[fr]=Foo;bar;
+Icon=foobar
+Categories=Utility;TextEditor;
+StartupNotify=false
+
+
+

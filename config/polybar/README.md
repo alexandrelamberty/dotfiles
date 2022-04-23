@@ -30,11 +30,12 @@ The configuration use Xresources variable for the colors and fonts used.
 - Webcam
 	
 	Start and stop the webcam. 
-	i3wm useful features 
+	i3wm useful features: 
 	- sticky features to keep the webcam on every screen
 	- scratch to hide the webcam
 
 - Microphone
+	
 
 ### Specific modules
 
@@ -55,6 +56,8 @@ Theses modules are very specific to my own data!
 - Tasks
  	
 	Show the number of my tasks list.
+
+- Calendar
 
 ## Installation
 

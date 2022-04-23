@@ -1,5 +1,5 @@
 {
-    "no_systray": false,
+   "no_systray": false,
     "timeout": 2.5,
     "recent_thr": 0.1,
     "compr_cnt": 3,

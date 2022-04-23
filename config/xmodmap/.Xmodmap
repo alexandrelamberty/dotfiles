@@ -1,0 +1,8 @@
+! ~/.Xmodmap
+! Xmodmap
+! https://wiki.archlinux.org/title/xmodmap
+
+! Swap Caps_Lock and Control_L
+clear Lock
+keycode 0x7e = Control_R
+add Control = Control_R  

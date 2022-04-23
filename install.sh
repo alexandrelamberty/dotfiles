@@ -6,27 +6,30 @@ installPackages() {
 	# TODO: implement this
 }
 
+# TODO integrate zsh, tmux and nvim config as sub module
+# Add condition if it one of above stow from the `config`
+# folder inside the sub module
 installConfigs() {
 	echo "> Installing configuration files for:"
 	input="config-packages.txt"
-	while IFS= read -r line; do
-		echo "- $line"
-		stow -v -d ./config -t ~ -S "$line"
+	while IFS= read -r package; do
+		echo "- $package"
+		stow -d ./config -vSt ~ "$package"
 	done <"$input"
 }
 
 installScripts() {
 	echo "> Installing scripts..."
-	stow -d ./scripts -t ~ -S bin
+	stow -d ./scripts -vSt ~ bin
 }
 
 installData() {
 	echo "> Installing dictionaries, fonts, icons, sounds and wallpapers..."
-	stow -d ./data -t ~ -S dict
-	stow -d ./data -t ~ -S fonts
-	stow -d ./data -t ~ -S icons
-	stow -d ./data -t ~ -S sounds
-	stow -d ./data -t ~ -S wallpapers
+	stow -d ./data -vSt ~ dict
+	stow -d ./data -vSt ~ fonts
+	stow -d ./data -vSt ~ icons
+	stow -d ./data -vSt ~ sounds
+	stow -d ./data -vSt ~ wallpapers
 }
 
 installPackages

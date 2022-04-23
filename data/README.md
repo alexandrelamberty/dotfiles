@@ -1,6 +1,6 @@
 # User Specific Data
 
-Data used by some programs.
+Data used by some programs. Default to `$XDG_DATA_HOME`
 
 ## Dict
 

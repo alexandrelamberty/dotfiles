@@ -16,34 +16,45 @@ Dotfiles
 
 ## Installation
 
+The installation process install by default all the configurations, data and scripts. 
+
+You can choose what configuration packages to install by editing `config-packages.txt`
+
+> See `pacman-packages.txt` to view all the required required packages.
+
 Check and run the `install.sh` script.
 
 ```
 ./install.sh 
 ```
 
-See `pacman-packages.txt` to view all the required required packages.
-
 ## Configuration
 
+Some programs need configuration according to the computer specs
+
+### Programs
+
 - i3
-	Configure workspaces and monitors `~/.config/i3/config` 
+
+	Configure workspaces and monitors in `~/.config/i3/config` 
 	> FIXME: Workspaces configuration include not working!
 
 - Polybar
-	Configure system paths and hardware `~/.config/polybar/hardware.ini`
+	
+	Configure system paths and hardware in `~/.config/polybar/hardware.ini`
 
-## Architecture
+## Structure
 
-The configuration is split in three main directory: 
+The configuration is split like this:
 
-- `config` contains all the programs configuration files. They mostly in
+- `bin` contains all the executable and will be symlinked into `$XDG_BIN_HOME`
+	see: ...
+- `config` contains all the configuration files. Will default to
 	`XDG_CONFIG_HOME` or `HOME`.
 - `data` contains resources like: dictionaries, icons, sounds used by programs.
-- `scripts` that contains all the scripts used by my configurations and
 	programs.
 
-## Configuration
+## Softwares used
 
 ### Base environment
 
@@ -76,100 +87,91 @@ The configuration is split in three main directory:
 
 * Sc (Spreadsheet calculator)
 * Htop (System monitoring)
-- Alsa (Advanced Linux Sound Architecture)
-- Bat (Cat like)
-- Cloc (Count line of code)
-- Colorpicker (A color picker! :))
-- Cups (Printer) TODO: Need config
-- FFmpeg (Video tools)
-- Freerdp (Remote desktop)
-- Fzf
-- Jq
-- Mpv (Video player)
-- Nitrogen (Desktop background)
-- Nmcli (Network manager)
-- Pandoc (Markup converter)
-- Pcmanfm (File manager)
-- Screenkey (On-Screen Keyboard)
-- Scrot (Screenshot)
-- Ueberzug (Image preview, I use it for Ranger)
-- Xdotool (X11 automation; keyboard, mouse, windows)
-- Xev (X events)
-- Xinit
-- Xmodmap (Keymaps and pointer button mappings in Xorg)
-- Xprop (Window and font properties in an X server)
-- Xrdb (Xresource database manager)
-- Xscreensaver
-- Zenity (GTK UIS)
+* Alsa (Advanced Linux Sound Architecture)
+* Bat (Cat like)
+* Cloc (Count line of code)
+* Colorpicker (A color picker! :))
+* Cups (Printer) TODO: Need config
+* FFmpeg (Video tools)
+* Freerdp (Remote desktop)
+* Fzf
+* Jq
+* Mpv (Video player)
+* Nitrogen (Desktop background)
+* Nmcli (Network manager)
+* Pandoc (Markup converter)
+* Pcmanfm (File manager)
+* Screenkey (On-Screen Keyboard)
+* Scrot (Screenshot)
+* Ueberzug (Image preview, I use it for Ranger)
+* Xdotool (X11 automation; keyboard, mouse, windows)
+* Xev (X events)
+* Xinit
+* Xmodmap (Keymaps and pointer button mappings in Xorg)
+* Xprop (Window and font properties in an X server)
+* Xrdb (Xresource database manager)
+* Xscreensaver
+* Zenity (GTK UIS)
 
 ## Additional software
 
-- Aseprite (Pixel graphics editor)
-- Galculator (Calculator)
-- Gimp (Image manipulation program)
-- Inkscape (Vector graphics editor)
-- Kdenlive (Video editing)
-- Postman (API testing)
-- Remmina (Remote desktop)
-- VScode (Source code editor)
+* Aseprite (Pixel graphics editor)
+* Galculator (Calculator)
+* Gimp (Image manipulation program)
+* Inkscape (Vector graphics editor)
+* Kdenlive (Video editing)
+* Postman (API testing)
+* Remmina (Remote desktop)
+* VScode (Source code editor)
 
 ## Programming
 
-See Neogit
+See my Neovim configuration.
 
-- Android SDK
-- Clang (C, C++)
-- Composer
-- Dart
-- Docker
-- Flutter
-- GO
-- NPM
-- Perl
-- Ruby
-- Yarn
-- SQL sqlite3, sqlitebrowser, sqldiff 
+* Android SDK
+* Clang (C, C++)
+* Composer
+* Dart
+* Docker
+* Flutter
+* GO
+* NPM
+* Perl
+* Ruby
+* Yarn
+* SQL sqlite3, sqlitebrowser, sqldiff 
 
 ## Data
 
-Data and media used by programs and configurations.
+Data and media used by programs and configurations. They will be symlinked in `XDG_DATA_HOME`.
 
-### Dict
+* Dict
 
-The spelling dictionaries I use in Neovim or Vim.
+	The spelling dictionaries I use in Neovim or Vim.
 
-They will be symlinked to `XDG_DATA_HOME/icons`
+* Fonts
 
-### Fonts
+	Fonts used in Xresources, GTK, i3 and Polybar. 
 
-Fonts used in Xresources, GTK, i3 and Polybar. 
+	> Updates Xresources references 
 
-They will be symlinked to `XDG_DATA_HOME/fonts`
+* Icons
 
-> Updates Xresources references 
+	The icons used for the notification system.
 
+* Mime
 
-### Icons
+	The mime/type associations I use.
 
-The icons are mainly and only at the moment used for the notification system
-[Dunst](https://github.com/dunst-project/dunst).
+* Sounds
 
-They will be symlinked to `XDG_DATA_HOME/icons`
+	Sounds used for the notification system and scripts.
 
-### Mime
+* Wallpapers
 
-They will be symlinked to `XDG_DATA_HOME/mime`
-
-### Sounds
-
-They will be symlinked to `XDG_DATA_HOME/sounds`
-
-### Wallpapers
-
-They will be symlinked to `XDG_DATA_HOME/wallpapers`
+	A little collection of wallpapers I like.
 
 ## References
 
-- [XDG Base Directory](https://wiki.archlinux.org/title/XDG_Base_Directory)
-- <https://wiki.archlinux.org/title/XDG_user_directories>
 - <https://www.freedesktop.org/wiki/Specifications/>
+- <https://wiki.archlinux.org/title/XDG_Base_Directory>

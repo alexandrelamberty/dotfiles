@@ -1,4 +1,5 @@
 # ~/.asoundrc
 # https://www.alsa-project.org/wiki/Asoundrc
+# TODO: Move from legacy directory
 defaults.pcm.card 0 
 defaults.ctl.card 0 

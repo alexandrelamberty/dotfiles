@@ -2,7 +2,7 @@
 
 Used to associated a mime type with an application
 
-See [XDG MIME Applications Types]()
+See `applications` and `mime` in the `data` part.
 
 ## References
 
