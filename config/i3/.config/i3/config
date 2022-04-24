@@ -6,6 +6,7 @@ set $mod Mod4
 
 # Setting workspaces variables
 
+# FIXME: Include not working
 set $ws1 "1: term"
 set $ws2 "2: coding"
 set $ws3 "3: web"
@@ -17,12 +18,11 @@ set $ws8 "8: 8"
 set $ws9 "9: 9"
 set $ws0 "10: 10"
 
-include $HOME/.config/i3/keybinds.conf
-include $HOME/.config/i3/workspaces.conf
 include $HOME/.config/i3/colors.conf
-include $HOME/.config/i3/gaps.conf
-include $HOME/.config/i3/modes.conf
-# include $HOME/.config/i3/monitors.conf
-include $HOME/.config/i3/windows.conf
 include $HOME/.config/i3/exec.conf
+include $HOME/.config/i3/gaps.conf
+include $HOME/.config/i3/keybinds.conf
+include $HOME/.config/i3/modes.conf
+include $HOME/.config/i3/windows.conf
+include $HOME/.config/i3/workspaces.conf
 
