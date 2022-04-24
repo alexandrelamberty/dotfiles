@@ -11,6 +11,7 @@ installPackages() {
 # folder inside the sub module
 installConfigs() {
 	echo "> Installing configuration files for:"
+	# TODO: replace by install.ini?
 	input="config-packages.txt"
 	while IFS= read -r package; do
 		echo "- $package"
@@ -20,7 +21,7 @@ installConfigs() {
 
 installScripts() {
 	echo "> Installing scripts..."
-	stow -d ./scripts -vSt ~ bin
+	stow -d ./bin -vSt ~ executable
 }
 
 installData() {

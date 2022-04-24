@@ -1,47 +1,57 @@
-Dotfiles
+# NIX
+
+My [Arch Linux](https://archlinux.org/) environment configuration
 
 ![Screenshot](./.readme/screenshot_08-04-21-17:35:54.png)
 
 ## TODO
 
-- [ ] Split this configuration into git branches? 
-- [ ] Refactor installation from Stow to custom?
-- [ ] Clean fonts, add wallpapers, icons and sounds
-- [ ] Check for security issues, mutt and others need credential
+- [ ] Rename repos to nix
+- [ ] Split this configuration into branch for each environment 
+- [ ] Check for security issues, mutt and others. Encrypt credentials locally
 - [ ] Document some configurations, bash, neovim ... or refer to notes?
+- [ ] Clean fonts, add wallpapers, icons and sounds and doc
+- [ ] Udev 
+	- [ ] Rules to restrict auto mounting of only my USB sticks (serials)
+	- [ ] Auto switch alsa when plug/unplug headphone
 
 ## Requirements
 
-> This configuration is based to run on an [Arch Linux]() operating system.
+An Arch Linux environment running.
 
 ## Installation
 
-The installation process install by default all the configurations, data and scripts. 
+This configuration is based on branching the master for each of my environment. I do so I can keep my hardware, monitors setup and window manager configuration separate but all based on the same configurations.
+
+### For an existing environment
+
+Switch to the branch containing the corresponding configuration and run the `install.sh` file.
+
+### For a new environment
+
+Create a new branch
+
+### Configuration
 
 You can choose what configuration packages to install by editing `config-packages.txt`
-
 > See `pacman-packages.txt` to view all the required required packages.
 
-Check and run the `install.sh` script.
+#### Monitor
 
-```
-./install.sh 
-```
+Create a local configuration by editing the `/config/xrandr/.xrandr` file.
 
-## Configuration
-
-Some programs need configuration according to the computer specs
-
-### Programs
+### Windows manager
 
 - i3
-
-	Configure workspaces and monitors in `~/.config/i3/config` 
+	Multimedia Keys
+	Configure workspaces and monitors associations in `/.config/i3/config` 
 	> FIXME: Workspaces configuration include not working!
 
 - Polybar
 	
-	Configure system paths and hardware in `~/.config/polybar/hardware.ini`
+	Configure system paths and hardware in `/.config/polybar/hardware.ini`
+
+Finally run the `install.sh` script.
 
 ## Structure
 
@@ -54,7 +64,7 @@ The configuration is split like this:
 - `data` contains resources like: dictionaries, icons, sounds used by programs.
 	programs.
 
-## Softwares used
+## Softwares
 
 ### Base environment
 
@@ -77,7 +87,7 @@ The configuration is split like this:
 
 ## Graphic environment
 
-* Dmenu (Menu)
+* Dmenu-patched (Menu)
 * Dunst (Notification)
 * GTK (GUIs)
 * Polybar (Status bar)

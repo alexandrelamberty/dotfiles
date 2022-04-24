@@ -2,21 +2,8 @@
 
 Window manager configuration
 
-## configuration
+## Configuration
 
-### Structure
+Create a local configuration for your workspaces and screens assignments
 
-### Multiple monitors
-
-## Features
-
-## Keybinds
-
-### Config
-
-### Launcher
-
-### Navigation
-
-### Modes
 
