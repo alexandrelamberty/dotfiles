@@ -1,12 +1,13 @@
 #!/bin/bash
-# Nvim configuration installation
+# Newsboat configuration installation
 
 PACKAGE=config
 TARGET=$HOME
+DIR="$(dirname "$0")"
 
 printf "Newsboat configuration installation\n"
-stow -vDt "$TARGET" $PACKAGE
+stow -d "$DIR" -vDt "$TARGET" $PACKAGE
 rm "$HOME/.newsboat/config"
 rm "$HOME/.newsboat/colors"
-stow -vSt "$TARGET" $PACKAGE
+stow -d "$DIR" -vSt "$TARGET" $PACKAGE
 

@@ -1,12 +1,12 @@
 #!/bin/bash
-# Nvim configuration installation
+# Transmission configuration installation
 
 PACKAGE=config
 TARGET=$HOME
 DIR="$(dirname "$0")"
 
-printf "Git configuration installation\n"
+printf "Transmission configuration installation\n"
 stow -d "$DIR" -vDt "$TARGET" $PACKAGE
-rm -rf "$HOME/.config/git"
+rm "$HOME/.config/transmission/settings.json"
 stow -d "$DIR" -vSt "$TARGET" $PACKAGE
 

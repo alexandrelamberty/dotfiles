@@ -1,11 +1,12 @@
 #!/bin/bash
-# Tmux configuration installation
+# Xmodmap configuration installation
 
 PACKAGE=config
 TARGET=$HOME
+DIR="$(dirname "$0")"
 
 printf "Xmodmap configuration installation\n"
-stow -vDt "$TARGET" $PACKAGE
+stow -d "$DIR" -vDt "$TARGET" $PACKAGE
 rm "$HOME/.Xmodmap"
-stow -vSt "$TARGET" $PACKAGE
+stow -d "$DIR" -vSt "$TARGET" $PACKAGE
 

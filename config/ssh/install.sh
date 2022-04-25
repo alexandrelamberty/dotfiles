@@ -1,11 +1,12 @@
 #!/bin/bash
-# Nvim configuration installation
+# Ssh configuration installation
 
 PACKAGE=config
 TARGET=$HOME
+DIR="$(dirname "$0")"
 
 printf "Ssh configuration installation\n"
-stow -vDt "$TARGET" $PACKAGE
+stow -d "$DIR" -vDt "$TARGET" $PACKAGE
 rm -rf "$HOME/.ssh/config/"
-stow -vSt "$TARGET" $PACKAGE
+stow -d "$DIR" -vSt "$TARGET" $PACKAGE
 

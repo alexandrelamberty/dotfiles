@@ -1,11 +1,12 @@
 #!/bin/bash
-# Tmux configuration installation
+# Tor configuration installation
 
 PACKAGE=config
 TARGET=$HOME
+DIR="$(dirname "$0")"
 
 printf "Tor configuration installation\n"
-stow -vDt "$TARGET" $PACKAGE
-rm -rf "$HOME/.torcc"
-stow -vSt "$TARGET" $PACKAGE
+stow -d "$DIR" -vDt "$TARGET" $PACKAGE
+rm -rf "$HOME/.torrc"
+stow -d "$DIR" -vSt "$TARGET" $PACKAGE
 

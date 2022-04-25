@@ -3,9 +3,10 @@
 
 PACKAGE=config
 TARGET=$HOME
+DIR="$(dirname "$0")"
 
 printf "Polybar configuration installation\n"
-stow -vDt "$TARGET" $PACKAGE
+stow -d "$DIR" -vDt "$TARGET" $PACKAGE
 rm -rf "$HOME/.config/polybar/"
-stow -vSt "$TARGET" $PACKAGE
+stow -d "$DIR" -vSt "$TARGET" $PACKAGE
 

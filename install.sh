@@ -16,7 +16,7 @@ installConfigs() {
 	while IFS= read -r package; do
 		echo "- $package"
 		# stow -d ./config -vSt ~ "$package"
-		"$package/install.sh"
+		"./config/$package/install.sh"
 	done <"$input"
 }
 

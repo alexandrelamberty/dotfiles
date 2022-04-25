@@ -1,12 +1,11 @@
 #!/bin/bash
 # Nvim configuration installation
 
-PACKAGE=config
+PACKAGE=executable
 TARGET=$HOME
 DIR="$(dirname "$0")"
 
-printf "Git configuration installation\n"
+printf "Common user-specific executables installation\n"
 stow -d "$DIR" -vDt "$TARGET" $PACKAGE
-rm -rf "$HOME/.config/git"
 stow -d "$DIR" -vSt "$TARGET" $PACKAGE
 

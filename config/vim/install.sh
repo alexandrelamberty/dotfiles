@@ -5,8 +5,9 @@ PACKAGE=config
 TARGET=$HOME
 
 printf "Vim configuration installation\n"
-stow -vDt "$TARGET" $PACKAGE
+stow -d "$DIR" -vDt "$TARGET" $PACKAGE
 rm -rf "$HOME/.vim/"
 rm "$HOME/.vimrc"
-stow -vSt "$TARGET" $PACKAGE
+stow -d "$DIR" -vSt "$TARGET" $PACKAGE
+
 

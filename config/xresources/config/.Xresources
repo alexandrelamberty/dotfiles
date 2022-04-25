@@ -34,10 +34,8 @@
 *.color15: #ebdbb2
 
 
-
-
 !#include ".Xresources.d/fonts"
 #include ".Xresources.d/sxiv"
-#include ".Xresources.d/urxvt-unicode"
+#include ".Xresources.d/urxvt"
 #include ".Xresources.d/xscreensaver"
 #include ".Xresources.d/xterm"
