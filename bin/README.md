@@ -1,4 +1,4 @@
-# Scripts
+# User specific executable
 
 Most of theses scripts are generic, some require specific software. Some other
 require a little tweak depending on the hardware of the operating system they

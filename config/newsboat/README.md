@@ -1,0 +1,3 @@
+# Newsboat configuration
+
+## References

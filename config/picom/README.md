@@ -1,0 +1,3 @@
+# Picom configuration
+
+## References

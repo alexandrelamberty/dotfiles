@@ -1,4 +1,4 @@
-# XDG MIME Applications List
+# XDG MIME Applications List configuration
 
 Used to associated a mime type with an application
 

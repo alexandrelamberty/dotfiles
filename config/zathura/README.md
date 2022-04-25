@@ -1,1 +1,3 @@
 # Zathura configuration
+
+## References

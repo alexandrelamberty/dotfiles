@@ -1,0 +1,3 @@
+# IRSSI configuration
+
+## References
