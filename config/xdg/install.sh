@@ -1,12 +1,13 @@
 #!/bin/bash
-# Tmux configuration installation
+# XDG configuration installation
 
 PACKAGE=config
 TARGET=$HOME
+DIR="$(dirname "$0")"
 
 printf "XDG configuration installation\n"
-stow -vDt "$TARGET" $PACKAGE
+stow -d "$DIR" -vDt "$TARGET" $PACKAGE
 rm "$HOME/.config/user-dirs.dirs"
 rm "$HOME/.config/user-dirs.locale"
-stow -vSt "$TARGET" $PACKAGE
+stow -d "$DIR" -vSt "$TARGET" $PACKAGE
 

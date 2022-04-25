@@ -1,11 +1,12 @@
 #!/bin/bash
-# Tmux configuration installation
+# Xinit configuration installation
 
 PACKAGE=config
 TARGET=$HOME
+DIR="$(dirname "$0")"
 
 printf "Xinit configuration installation\n"
-stow -vDt "$TARGET" $PACKAGE
-rm "$HOME/.xinit"
-stow -vSt "$TARGET" $PACKAGE
+stow -d "$DIR" -vDt "$TARGET" $PACKAGE
+rm "$HOME/.xinitrc"
+stow -d "$DIR" -vSt "$TARGET" $PACKAGE
 

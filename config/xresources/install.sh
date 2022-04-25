@@ -1,12 +1,13 @@
 #!/bin/bash
-# Tmux configuration installation
+# Xresources configuration installation
 
 PACKAGE=config
 TARGET=$HOME
+DIR="$(dirname "$0")"
 
 printf "Xresources configuration installation\n"
-stow -vDt "$TARGET" $PACKAGE
+stow -d "$DIR" -vDt "$TARGET" $PACKAGE
 rm -rf "$HOME/.Xresources.d/"
 rm "$HOME/.Xresources"
-stow -vSt "$TARGET" $PACKAGE
+stow -d "$DIR" -vSt "$TARGET" $PACKAGE
 
