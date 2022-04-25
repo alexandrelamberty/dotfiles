@@ -1,8 +1,8 @@
-# Xrandr
+# Xrandr configuration
 
 > TODO: This need to be sourced by all login shell using Xrandr.
 
-Create a local configuration by editing the `.xrandr` file.
+Create a local configuration by editing the `~/.config/xrandr/config` file.
 
 Sample configuration for a laptop monitor
 ```bash

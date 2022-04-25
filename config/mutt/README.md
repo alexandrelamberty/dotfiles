@@ -1,0 +1,4 @@
+# Mutt configuration
+
+## References
+

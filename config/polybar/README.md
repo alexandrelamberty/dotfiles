@@ -1,4 +1,4 @@
-# Polybar
+# Polybar configuration
 
 My custom configuration of Polybar made at first specifically for my old
 laptop, an EliteBook 2540p. I now use it an all my computers.

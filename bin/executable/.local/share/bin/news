@@ -1,2 +1,0 @@
-#!/bin/bash
-cat ".local/share/bin/news.txt" | fzf --reverse
