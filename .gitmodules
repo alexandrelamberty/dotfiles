@@ -1,9 +1,12 @@
 [submodule "config/zsh"]
 	path = config/zsh
 	url = git@github.com:alexandrelamberty/zsh-config
+	banch = master
 [submodule "config/tmux"]
 	path = config/tmux
 	url = git@github.com:alexandrelamberty/tmux-config
+	branch  = master
 [submodule "config/nvim"]
 	path = config/nvim
 	url = git@github.com:alexandrelamberty/nvim-config
+	branch = master
