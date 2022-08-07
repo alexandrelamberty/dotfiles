@@ -13,3 +13,7 @@
 [submodule "config/polybar"]
 	path = config/polybar
 	url = git@github.com:alexandrelamberty/polybar-config.git
+	branch = elitebook
+[submodule "config/i3"]
+	path = config/i3
+	url = git@github.com:alexandrelamberty/i3-config.git
