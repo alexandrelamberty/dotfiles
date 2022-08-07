@@ -1,5 +1,4 @@
 ! vim: set filetype=xdefaults :
-! sxiv
 Sxiv.font: lucy tewi
-Sxiv.foreground: #0F111A
 Sxiv.background: #0F111A
+Sxiv.foreground: #0F111A

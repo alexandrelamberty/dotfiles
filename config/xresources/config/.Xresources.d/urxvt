@@ -1,7 +1,6 @@
 ! vim: set ft=xdefaults :
 ! ~/.Xresources.d/urxvt-unicode
 ! This file is included by ~/.Xresources
-
 URxvt.font: xft:SauceCodePro Nerd Font:style=Regular:size=11 
 URxvt.boldFont: xft:SauceCodePro Nerd Font:style=Bold:size=11
 URxvt.italicFont: xft:SauceCodePro Nerd Font:style=Italic:size=11
@@ -29,10 +28,10 @@ URxvt.keysym.Control-Up: \033[1;5A
 URxvt.keysym.Control-Down: \033[1;5B
 URxvt.keysym.Control-Right: \033[1;5C
 URxvt.keysym.Control-Left: \033[1;5D
-URxvt.keysym.Control-minus:     resize-font:smaller
-URxvt.keysym.Control-plus:      resize-font:bigger
-URxvt.keysym.C-equal:     resize-font:reset
-URxvt.keysym.C-question:  resize-font:show
+URxvt.keysym.Control-minus: resize-font:smaller
+URxvt.keysym.Control-plus: resize-font:bigger
+URxvt.keysym.C-equal: resize-font:reset
+URxvt.keysym.C-question: resize-font:show
 
 !! Copy Paste & Other Extensions
 URxvt.perl-ext-common: default,matcher,clipboard,url-select,keyboard-select,resize-font
