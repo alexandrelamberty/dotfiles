@@ -1,0 +1,54 @@
+#!/usr/bin/bash
+# Make a clip from a Youtube video source
+# https://superuser.com/questions/1305380/how-to-use-ffmpeg-t-when-using-a-live-youtube-source-with-youtube-dl
+
+programname=$0
+function usage {
+	echo ""
+	echo "Clip a Youtube video."
+	echo ""
+	echo "usage: $programname --url string --start string --duration string"
+	echo ""
+	echo "  --url string   			name of the service"
+	echo "                          (example: blaze-search-term-redirect-service)"
+	echo "  --start string          tag of the image to deploy"
+	echo "                          (example: 804-a325d6a)"
+	echo "  --url string      		namespace of the cluster"
+	echo "                          (example: eos)"
+	echo ""
+}
+
+# Argument validation failed
+function die {
+    printf "Script failed: %s\n\n" "$1"
+    exit 1
+}
+
+# Argument parsing
+while [ $# -gt 0 ]; do
+    if [[ $1 == "--"* ]]; then
+        v="${1/--/}"
+        declare "$v"="$2"
+        shift
+    fi
+    shift
+done
+
+# Argument validation
+if [[ -z $url ]]; then
+    usage
+    die "Missing parameter --url"
+elif [[ -z $start ]]; then
+    usage
+    die "Missing parameter --start"
+elif [[ -z $duration ]]; then
+    usage
+    die "Missing parameter --duration"
+fi
+
+# Argument format validation
+# TODO: Url and timestamp validation
+# Clip the Youtube video
+ffmpeg -ss 00:29:00 -i "$(youtube-dl -f mp4 -g "$url")" \
+	-c:v copy -c:a aac -strict experimental \
+	-s "$start" -t "$duration" output.mkv

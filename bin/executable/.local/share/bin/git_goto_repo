@@ -1,7 +1,8 @@
 #!/bin/bash
-# Open the remote origin of a Git repository
+# Open the remote origin of a Git repository with the default browser
 if [ -d ".git" ]; then
-  remote=$(git remote -v)
-  echo $remote
+  repo=$(git remote get-url origin | grep -o -P '(?<=:).*(?='.git')')
+  # TODO: handle github, gitlab, package ? AUR
+  xdg-open 'https://github.com/'"$repo" 2>stdr 
 fi
 

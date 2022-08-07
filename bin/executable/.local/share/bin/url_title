@@ -1,0 +1,3 @@
+#!/bin/bash
+# Exctract the html title tag
+curl -v --silent -L "$1" 2>&1 | grep -Eo "<title>.*</title>"
