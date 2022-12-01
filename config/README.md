@@ -1,6 +1,6 @@
 # Common user-level configurations
 
-This is the base configuration for all my common programs. 
+This is the base configuration for all my common programs.
 
 ## Requirements
 
@@ -20,11 +20,12 @@ stow -nvSt ~ zsh
 ```
 
 Install ls zsh tmux git neovim
+
 ```bash
 stow -vSt ~ zsh
 ```
 
-## Software 
+## Software
 
 - Alacritty
 - Alsa

@@ -14,7 +14,7 @@ installConfigs() {
 	# TODO: replace by install.ini?
 	input="config-packages.txt"
 	while IFS= read -r package; do
-		echo "- $package"
+		echo ""
 		# stow -d ./config -vSt ~ "$package"
 		"./config/$package/install.sh"
 	done <"$input"
@@ -34,7 +34,7 @@ installData() {
 	stow -d ./data -vSt ~ wallpapers
 }
 
-installPackages
+#installPackages
 installConfigs
-installScripts
-installData
+#installScripts
+#installData

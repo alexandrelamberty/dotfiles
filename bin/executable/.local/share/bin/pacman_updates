@@ -1,6 +1,7 @@
 #!/bin/bash
 # ~/.local/bin/pacman_updates.sh
 # Display the number of Pacman updates
+# Dependency of Polybar, move to scripts of Polybar
 # Author: Alexandre Lamberty <mail@alexandrelamberty.com>
 updates=$(sudo pacman -Qu 2> /dev/null | wc -l )
 output="ARCH: %{F#f00}$updates%{F-}"

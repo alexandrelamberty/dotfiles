@@ -1,7 +1,6 @@
 #!/bin/bash
 # Open the remote origin of a Git repository
-if [ -d ".git" ]; then
-  remote=$(git remote -v)
-  echo $remote
-fi
-
+remote=$(git config --get remote.origin.url)
+repo=$(echo $remote | cut -c 16-)
+url="https://github.com/$repo"
+open $url &> /dev/null & disown $!
