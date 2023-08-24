@@ -1,18 +1,17 @@
 ! vi:syntax=xdefaults:
-XTerm*borderWidth: 0 
+XTerm*borderWidth: 0
 XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 XTerm*cursorBlink: true
-XTerm*faceName: Iosevka Nerd Font:style:Regular:size=11
+XTerm*faceName: Iosevka Nerd Font Mono:style:Regular:size=11
 XTerm*fullscreen: never
 XTerm*highlightSelection: true
 XTerm*internalBorder: 5
 XTerm*on3Clicks: regex [[:alpha:]]+://([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
 XTerm*rightScrollBar: false
-XTerm*selectToClipboard: false 
+XTerm*selectToClipboard: false
 XTerm*trimSelection: true
 XTerm.vt100.scaleHeight: 1
 Xterm*scrollBar: false
-
 
 XTerm.VT100.translations: #override \
 Meta <Key> minus: smaller-vt-font() \n\
@@ -20,4 +19,3 @@ Meta <Key> plus: larger-vt-font() \n\
 Meta <Key> 0: set-vt-font(d) \n\
 Meta <Key> j: scroll-back() \n\
 Meta <Key> x: exec-formatted("xdg-open '%t'", PRIMARY) select-start() select-end() \n\
-
