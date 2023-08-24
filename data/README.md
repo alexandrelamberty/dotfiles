@@ -21,4 +21,3 @@ Sounds used for my notification system [Dunst](https://github.com/dunst-project/
 ## Wallpapers
 
 Wallpapers used by my background manager [Nitrogen](https://github.com/l3ib/nitrogen)
-

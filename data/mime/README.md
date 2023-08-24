@@ -4,7 +4,7 @@ Custom mime applications
 
 ## Usage
 
-Create the new mime type see `application-x-foobar.xml` 
+Create the new mime type see `application-x-foobar.xml`
 
 Update the database
 
@@ -12,6 +12,6 @@ Update the database
 update-mime-database ~/.local/share/mime
 ```
 
-## References 
+## References
 
 - <https://wiki.archlinux.org/title/XDG_MIME_Applications>
