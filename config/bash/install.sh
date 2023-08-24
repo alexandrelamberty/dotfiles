@@ -5,9 +5,9 @@ PACKAGE=config
 TARGET=$HOME
 DIR="$(dirname "$0")"
 
-printf "Bash configuration installation\n"
+printf "\nBash configuration installation\n"
 stow -d "$DIR" -vDt "$TARGET" $PACKAGE
 rm "$HOME/.bash_profile"
-rm "$HOME/.bash_rc"
+rm "$HOME/.bashrc"
 stow -d "$DIR" -vSt "$TARGET" $PACKAGE
 

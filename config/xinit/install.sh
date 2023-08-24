@@ -5,7 +5,7 @@ PACKAGE=config
 TARGET=$HOME
 DIR="$(dirname "$0")"
 
-printf "Xinit configuration installation\n"
+printf "\nXinit configuration installation\n"
 stow -d "$DIR" -vDt "$TARGET" $PACKAGE
 rm "$HOME/.xinitrc"
 stow -d "$DIR" -vSt "$TARGET" $PACKAGE

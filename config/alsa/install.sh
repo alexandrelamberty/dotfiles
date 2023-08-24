@@ -5,8 +5,8 @@ PACKAGE=config
 TARGET=$HOME
 DIR="$(dirname "$0")"
 
-printf "Alsa configuration installation\n"
+printf "\nAlsa configuration installation\n"
 stow -d "$DIR" -vDt "$TARGET" $PACKAGE
-rm -rf "$HOME/.asoundrc"
+rm -rf  "$HOME/.asoundrc" 
 stow -d "$DIR" -vSt "$TARGET" $PACKAGE
 

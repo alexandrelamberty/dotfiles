@@ -4,10 +4,10 @@
 PACKAGE=config
 TARGET=$HOME
 
-printf "Vim configuration installation\n"
+printf "\nVim configuration installation\n"
 stow -d "$DIR" -vDt "$TARGET" $PACKAGE
 rm -rf "$HOME/.vim/"
-rm "$HOME/.vimrc"
+rm -rf "$HOME/.vimrc"
 stow -d "$DIR" -vSt "$TARGET" $PACKAGE
 
 
